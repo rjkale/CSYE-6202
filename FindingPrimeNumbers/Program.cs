@@ -6,6 +6,8 @@ namespace FindingPrimeNumbers
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
             int input;
 
             Console.WriteLine("Enter N prime numbers you want");
@@ -23,10 +25,7 @@ namespace FindingPrimeNumbers
                 Console.WriteLine("\nThe sum of Prime numbers is " + output);
                 Console.ReadLine();
             }
-
-
-
-
+            }
         }
     }
 }
