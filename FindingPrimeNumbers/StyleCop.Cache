@@ -10,7 +10,7 @@
     <timestamps>
       <styleCop>2015-10-02 23:39:07.195</styleCop>
       <settingsFile>2015-10-02 23:39:07.180</settingsFile>
-      <sourceFile>2015-10-02 23:50:25.577</sourceFile>
+      <sourceFile>2015-10-02 23:57:14.460</sourceFile>
       <parser>2015-10-02 23:39:07.195</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-02 23:39:07.195</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>416023090</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -70,8 +70,8 @@
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="TabsMustNotBeUsed" ruleCheckId="SA1027">
         <context>Tabs are not allowed. Use spaces instead.</context>
         <line>46</line>
-        <index>986</index>
-        <endIndex>986</endIndex>
+        <index>975</index>
+        <endIndex>975</endIndex>
         <startLine>46</startLine>
         <startColumn>1</startColumn>
         <endLine>46</endLine>
@@ -201,39 +201,34 @@
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="TabsMustNotBeUsed" ruleCheckId="SA1027">
         <context>Tabs are not allowed. Use spaces instead.</context>
         <line>23</line>
-        <index>492</index>
-        <endIndex>493</endIndex>
+        <index>484</index>
+        <endIndex>484</endIndex>
         <startLine>23</startLine>
         <startColumn>1</startColumn>
         <endLine>23</endLine>
-        <endColumn>2</endColumn>
+        <endColumn>1</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="TabsMustNotBeUsed" ruleCheckId="SA1027">
         <context>Tabs are not allowed. Use spaces instead.</context>
         <line>24</line>
-        <index>497</index>
-        <endIndex>499</endIndex>
+        <index>488</index>
+        <endIndex>488</endIndex>
         <startLine>24</startLine>
         <startColumn>1</startColumn>
         <endLine>24</endLine>
-        <endColumn>3</endColumn>
+        <endColumn>1</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="TabsMustNotBeUsed" ruleCheckId="SA1027">
         <context>Tabs are not allowed. Use spaces instead.</context>
         <line>45</line>
-        <index>981</index>
-        <endIndex>982</endIndex>
+        <index>970</index>
+        <endIndex>971</endIndex>
         <startLine>45</startLine>
         <startColumn>1</startColumn>
         <endLine>45</endLine>
         <endColumn>2</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCopPlus.StyleCopPlusRules" rule="CheckAllowedIndentationCharacters" ruleCheckId="SP2001">
-        <context>Only tab characters are allowed to be used for indentation.</context>
-        <line>22</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCopPlus.StyleCopPlusRules" rule="CheckAllowedIndentationCharacters" ruleCheckId="SP2001">
@@ -327,7 +322,7 @@
     <timestamps>
       <styleCop>2015-10-02 23:39:07.195</styleCop>
       <settingsFile>2015-10-02 23:39:07.180</settingsFile>
-      <sourceFile>2015-10-02 23:50:24.720</sourceFile>
+      <sourceFile>2015-10-02 23:57:17.359</sourceFile>
       <parser>2015-10-02 23:39:07.195</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-02 23:39:07.195</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>416023090</StyleCop.CSharp.DocumentationRules.FilesHashCode>
