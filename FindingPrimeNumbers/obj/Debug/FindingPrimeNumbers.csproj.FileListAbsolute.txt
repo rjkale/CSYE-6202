@@ -1,0 +1,11 @@
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\FindingPrimeNumbers.exe.config
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\FindingPrimeNumbers.exe
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\FindingPrimeNumbers.pdb
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\StyleCop.CSharp.dll
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\StyleCop.CSharp.Rules.dll
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\StyleCop.dll
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\obj\Debug\FindingPrimeNumbers.csprojResolveAssemblyReference.cache
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\obj\Debug\FindingPrimeNumbers.exe
+C:\Users\Pc\Source\Repos\CSYE-6202\FindingPrimeNumbers\obj\Debug\FindingPrimeNumbers.pdb
