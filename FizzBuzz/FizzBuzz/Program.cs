@@ -10,7 +10,7 @@ namespace FizzBuzz
             {
 
         
-            Console.WriteLine("Enter a Number");
+            Console.WriteLine("Enter a Number"); 
             int input = Convert.ToInt32(Console.ReadLine());
 
             FizzBuzz fb = new FizzBuzz();
