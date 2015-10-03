@@ -19,7 +19,7 @@
             else if (108 < weight && weight <= 112)
             {
                 return "Flyweight";
-            }
+            } 
 
             else if (112 < weight && weight <= 115)
             {
