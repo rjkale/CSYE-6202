@@ -24,7 +24,7 @@
             else if (112 < weight && weight <= 115)
             {
                 return "Junior Bantamweight";
-            }
+            } 
 
             else if (115 < weight && weight <= 118)
             {
