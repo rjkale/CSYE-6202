@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingPrimeNumbers", "FindingPrimeNumbers\FindingPrimeNumbers.csproj", "{60E24DA7-4B82-42C1-839C-0633C3862A07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingPrimeNumbers.Tests", "FindingPrimeNumbers.Tests\FindingPrimeNumbers.Tests.csproj", "{A201330F-6565-4497-A20F-6FDA84CBCF4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60E24DA7-4B82-42C1-839C-0633C3862A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E24DA7-4B82-42C1-839C-0633C3862A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E24DA7-4B82-42C1-839C-0633C3862A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E24DA7-4B82-42C1-839C-0633C3862A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A201330F-6565-4497-A20F-6FDA84CBCF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A201330F-6565-4497-A20F-6FDA84CBCF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A201330F-6565-4497-A20F-6FDA84CBCF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A201330F-6565-4497-A20F-6FDA84CBCF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
