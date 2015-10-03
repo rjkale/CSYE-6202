@@ -19,9 +19,9 @@ namespace FindingPrimeNumbers
             return true;
         }
 
-        public long FindSumOfPrimeNumbers(int input)
-		{
-			long sum = 0;
+public long FindSumOfPrimeNumbers(int input)
+	{
+	long sum = 0;
             int count = 2;
             int i = 0;
 
