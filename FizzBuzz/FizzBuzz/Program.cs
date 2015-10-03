@@ -14,7 +14,7 @@ namespace FizzBuzz
             int input = Convert.ToInt32(Console.ReadLine());
 
             FizzBuzz fb = new FizzBuzz();
-            string output = fb.RunFizzBuzz(input);
+            string output = fb.RunFizzBuzz(input); 
 
             Console.WriteLine(output);
             Console.ReadLine();
