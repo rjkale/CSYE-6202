@@ -6,84 +6,84 @@
 {
             int weight = weightInPounds;
 
-            if (weight < 105)
+            if (0 <= weight && weight <= 105)
             {
-                return "Strawweight";
+                return "Strawweight and Heavyweight";
             }
 
             else if (105 < weight && weight <= 108)
             {
-                return "Junior Flyweight";
+                return "JuniorFlyweight and Heavyweight";
             }
 
             else if (108 < weight && weight <= 112)
             {
-                return "Flyweight";
+                return "Flyweight and Heavyweight";
             } 
 
             else if (112 < weight && weight <= 115)
             {
-                return "Junior Bantamweight";
+                return "Bantamweight and Heavyweight";
             } 
 
             else if (115 < weight && weight <= 118)
             {
-                return "Bantamweight";
+                return "Bantamweight and Heavyweight";
             }
 
             else if (118 < weight && weight <= 122)
             {
-                return "Junior Featherweight";
+                return "JuniorFeatherweight and Heavyweight";
             }
 
             else if (122 < weight && weight <= 126)
             {
-                return "Featherweight";
+                return "Featherweight and Heavyweight";
             }
 
             else if (126 < weight && weight <= 130)
             {
-                return "Junior Lightweight";
+                return "JuniorLightweight and Heavyweight";
             }
 
             else if (130 < weight && weight <= 135)
             {
-                return "Lightweight";
+                return "Lightweight and Heavyweight";
             }
 
             else if (135 < weight && weight <= 140)
             {
-                return "Junior Welterweight";
+                return "JuniorWelterweight and Heavyweight";
             }
 
             else if (140 < weight && weight <= 147)
             {
-                return "Welterweight";
+                return "Welterweight and Heavyweight";
             }
 
             else if (147 < weight && weight <= 154)
             {
-                return "Junior Middleweight";
+                return "JuniorMiddleweight and Heavyweight";
             }
 
             else if (154 < weight && weight <= 160)
             {
-                return "Middleweight ";
+                return "Middleweight and Heavyweight";
             }
 
             else if (160 < weight && weight <= 168)
             {
-                return "Super Middleweight";
+                return "SuperMiddleweight and Heavyweight";
             }
 
             else if (168 < weight && weight <= 175)
             {
-                return "Light Heavyweight";
+                return "LightHeavyweight and Heavyweight";
             }
 
             else if (175 < weight && weight <= 200)
             {
-                return "Cruiserweight";
+                return "Cruiserweight and Heavyweight";
             }
 
             else if (200 < weight)
