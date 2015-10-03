@@ -1,14 +1,30 @@
-﻿namespace FizzBuzz
+﻿using System;
+
+namespace FizzBuzz
 {
 	public class FizzBuzz
 	{
-		public string RunFizzBuzz(int number)
+		public string RunFizzBuzz(int input)
 		{
-			string result = number.ToString();
 
-			// your solution/implementation should go in here
+            if (input % 3 == 0 && input % 5 == 0)
+            { return "FIZZ BUZZ"; }
 
-			return result;
-		}
+            else if (input % 3 == 0)
+            { return  "FIZZ"; }
+
+            else if (input % 5 == 0)
+            { return "BUZZ"; }
+
+            else {
+
+                    string result = input.ToString();
+                    return result;
+                 }
+
+            
+
+
+        }
 	}
 }
