@@ -9,7 +9,7 @@
   <sourcecode name="FindingPrimeNumbers.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 17:31:48.595</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -295,7 +295,7 @@
   <sourcecode name="Program.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 17:31:48.579</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -471,7 +471,7 @@
   <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 16:48:02.999</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -527,7 +527,7 @@
   <sourcecode name=".NETFramework,Version=v4.5.AssemblyAttributes.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-09-18 14:21:10.923</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -552,7 +552,7 @@
   <sourcecode name="TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 16:49:12.083</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -583,7 +583,7 @@
   <sourcecode name="TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 16:49:12.083</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
@@ -614,7 +614,7 @@
   <sourcecode name="TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015-10-03 17:16:13.940</styleCop>
-      <settingsFile>2015-10-03 17:16:13.908</settingsFile>
+      <settingsFile>2015-10-03 17:36:21.105</settingsFile>
       <sourceFile>2015-10-03 16:49:12.085</sourceFile>
       <parser>2015-10-03 17:16:13.940</parser>
       <StyleCop.CSharp.DocumentationRules>2015-10-03 17:16:13.940</StyleCop.CSharp.DocumentationRules>
