@@ -65,7 +65,7 @@ namespace TrianglePatterns
             {
                 for (i = 1; i <= count; i++)
                 {
-                    if (i<=j)
+                    if (i<j)
                         Console.Write(space);
                     else
                         Console.Write(star);
