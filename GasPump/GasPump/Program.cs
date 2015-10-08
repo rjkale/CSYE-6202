@@ -15,21 +15,20 @@ namespace GasPump
 
 		static void Main(string[] args)
 		{
-            // your implementation here
+            while (true)
+            {
+
             Console.WriteLine("Welcome! \n Gas Type \n R/r = Regular Gas \n M/m = MidgradeGas \n P/p = PremiumGas \n D/d = DieselFuel ");
             Console.WriteLine("\nPlease enter the Purchased Gas Type");
             String input = Convert.ToString(Console.ReadLine());
-            while (true)
-            {
+            
             
             if(UserEnteredValidGasType(input))
             {
-                Console.WriteLine("Its a regular Gas");
                     char inputchar = Convert.ToChar(input);
-
                     GasType gt = GasTypeMapper(inputchar);
                     Double gpm = GasPriceMapper(gt);
-                    Console.WriteLine("You Brought" + inputchar + " and the Price of the gas is " +gpm);
+                    Console.WriteLine("You Brought " + gt + " GasType \nthe Price of the gas is " +gpm);
 
 
                     break;
@@ -66,8 +65,23 @@ namespace GasPump
             {
                 result = true;
             }
-			
-			return result;
+
+            if (userInput == "m" || userInput == "M")
+            {
+                result = true;
+            }
+
+            if (userInput == "p" || userInput == "P")
+            {
+                result = true;
+            }
+
+            if (userInput == "d" || userInput == "D")
+            {
+                result = true;
+            }
+
+            return result;
 		}
 
 		// use this method to parse and check the double type entered
@@ -86,8 +100,6 @@ namespace GasPump
 		// this mapping "must" be used within CalculateTotalCost() method later on
 		public static GasType GasTypeMapper(char c)
 		{
-			
-
             switch (c)
             {
 
@@ -98,11 +110,29 @@ namespace GasPump
                         return gasType;
                     }
 
-                default: throw new ArgumentOutOfRangeException();
-            }//end of switch
+                case 'M':
+                case 'm':
+                    {
+                        GasType gasType = GasType.MidgradeGas;
+                        return gasType;
+                    }
 
-            
-            //GasType gasType = GasType.None;
+                case 'P':
+                case 'p':
+                    {
+                        GasType gasType = GasType.PremiumGas;
+                        return gasType;
+                    }
+
+                case 'D':
+                case 'd':
+                    {
+                        GasType gasType = GasType.DieselFuel;
+                        return gasType;
+                    }
+
+                default: return GasType.None;
+               }//end of switch
         }
 
 		public static double GasPriceMapper(GasType gasType)
@@ -111,22 +141,25 @@ namespace GasPump
             switch (gasType)
             {
                 case GasType.None:
-                    return 0;
+                    result = 0;
+                    break;
                     
                 case GasType.RegularGas:
-                    return 1.94;
+                    result= 1.94;
+                    break;
                     
                 case GasType.MidgradeGas:
-                    return 2.00;
+                    result = 2.00;
+                    break;
                     
                 case GasType.PremiumGas:
-                    return 2.24;
+                    result = 2.24;
+                    break;
 
                 case GasType.DieselFuel:
-                    return 2.17;
-
+                    result = 2.17;
+                    break;
             }
-
 
             return result;
 	    }
