@@ -18,7 +18,7 @@ namespace GasPump
             while (true)
             {
 
-            Console.WriteLine("Welcome! \n Gas Type \n R/r = Regular Gas \n M/m = MidgradeGas \n P/p = PremiumGas \n D/d = DieselFuel ");
+            Console.WriteLine("\nWelcome! \n Gas Type \n R/r = Regular Gas \n M/m = MidgradeGas \n P/p = PremiumGas \n D/d = DieselFuel ");
             Console.WriteLine("\nPlease enter the Purchased Gas Type");
             String input = Convert.ToString(Console.ReadLine());
             
@@ -28,21 +28,33 @@ namespace GasPump
                     char inputchar = Convert.ToChar(input);
                     GasType gt = GasTypeMapper(inputchar);
                     Double gpm = GasPriceMapper(gt);
-                    Console.WriteLine("You Brought " + gt + " GasType \nthe Price of the gas is " +gpm);
 
+                    //Get the value of purchased gas amount from the user
 
-                    break;
-                
-            }//end if
+                    Console.WriteLine("\nPlease enter purchased gas amount");
+                    string pamount = Convert.ToString(Console.ReadLine());
+
+               
+                    if(UserEnteredValidAmount(pamount))
+                    {
+                        Console.WriteLine("\nYou bought " + pamount + " gallons of "+gt + " at the Price of " + gpm);
+                        double totalcost = 0;
+                        CalculateTotalCost(gt, int.Parse(pamount), ref totalcost );
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nPlease enter a valid purchase amount");
+                    }
+            }//end if inner
             else
             {
-                Console.WriteLine("Please enter a valid option");
-                    break;
+                Console.WriteLine("\nPlease enter a valid option\n");
+                    
             }//end else
 
             }//End of While loop
 
-            Console.ReadLine();
+
         }//End of main function
 
 		// use this method to check and see if sentinel value is entered
@@ -89,10 +101,14 @@ namespace GasPump
 		public static bool UserEnteredValidAmount(string userInput)
 		{
 			var result = false;
-
-			
-
-			return result;
+            double n;
+            if (Double.TryParse(userInput, out n))
+            {   
+                result = true;
+                return result;
+            }
+            else
+                return result;			
 		}
 
 		// use this method to map a valid char entry to its enum representation
@@ -166,7 +182,9 @@ namespace GasPump
 
 		public static void CalculateTotalCost(GasType gasType, int gasAmount, ref double totalCost)
 		{
-			
+            double gPriceMapper = GasPriceMapper(gasType);
+            double TotalPrice = gPriceMapper * gasAmount;
+            Console.WriteLine("\nYour total cost for this purchase is: " +TotalPrice);   			
 		}
 	}
 }
