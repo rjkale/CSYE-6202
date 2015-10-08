@@ -15,9 +15,7 @@ namespace GasPump
 
 		static void Main(string[] args)
 		{
-            while (true)
-            {
-
+            
             Console.WriteLine("\nWelcome! \n Gas Type \n R/r = Regular Gas \n M/m = MidgradeGas \n P/p = PremiumGas \n D/d = DieselFuel ");
             Console.WriteLine("\nPlease enter the Purchased Gas Type");
             String input = Convert.ToString(Console.ReadLine());
@@ -40,6 +38,8 @@ namespace GasPump
                         Console.WriteLine("\nYou bought " + pamount + " gallons of "+gt + " at the Price of " + gpm);
                         double totalcost = 0;
                         CalculateTotalCost(gt, int.Parse(pamount), ref totalcost );
+                        Console.WriteLine("\nYour total cost for this purchase is: " + totalcost);
+                    Console.ReadLine();
                     }
                     else
                     {
@@ -52,7 +52,7 @@ namespace GasPump
                     
             }//end else
 
-            }//End of While loop
+          
 
 
         }//End of main function
@@ -184,7 +184,7 @@ namespace GasPump
 		{
             double gPriceMapper = GasPriceMapper(gasType);
             double TotalPrice = gPriceMapper * gasAmount;
-            Console.WriteLine("\nYour total cost for this purchase is: " +TotalPrice);   			
+            totalCost = TotalPrice; 			
 		}
 	}
 }
