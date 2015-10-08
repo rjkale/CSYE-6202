@@ -17,9 +17,18 @@ namespace GasPump
 		{
             
             Console.WriteLine("\nWelcome! \n Gas Type \n R/r = Regular Gas \n M/m = MidgradeGas \n P/p = PremiumGas \n D/d = DieselFuel ");
+            Console.WriteLine("Press Q or q any time to exit the Application");
             Console.WriteLine("\nPlease enter the Purchased Gas Type");
             String input = Convert.ToString(Console.ReadLine());
-            
+
+
+            if (UserEnteredSentinelValue(input))
+            {
+                Console.WriteLine("\nApplication Terminated. Press any key to EXIT !");
+                Console.ReadLine();
+                Environment.Exit(0);
+
+            }
             
             if(UserEnteredValidGasType(input))
             {
@@ -61,9 +70,14 @@ namespace GasPump
 		public static bool UserEnteredSentinelValue(string userInput)
 		{
 			var result = false;
-
-			
-
+            if (userInput == "Q" || userInput == "q")
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
 			return result;
 		}
 
