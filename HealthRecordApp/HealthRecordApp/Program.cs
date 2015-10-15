@@ -17,12 +17,12 @@ namespace HealthRecordApp
                     LastName:
                     Console.WriteLine("Please enter patient's last name: ");
                     string lName = Convert.ToString(Console.ReadLine());
-                    
+
                     if (HealthProfileHelper.ValidateLastName(lName))
                     {
                         hp.LastName = lName;
                         Gender:
-                        
+
                         Console.WriteLine("Please enter patient's gender: ");
                         string gender = Convert.ToString(Console.ReadLine());
                         Gender Gen = new Gender();

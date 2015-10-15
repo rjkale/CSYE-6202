@@ -2,16 +2,16 @@
 
 namespace HealthRecordApp
 {
-	public enum Gender
-	{
-		Unspecified,
-		Male,
-		Female
-	}
+    public enum Gender
+    {
+        Unspecified,
+        Male,
+        Female
+    }
 
 
-	public class HealthProfile
-	{
+    public class HealthProfile
+    {
         private string firstName;
         private string lastName;
         private Gender gender;
@@ -71,44 +71,44 @@ namespace HealthRecordApp
 
         private const int UnknownValue = -1;
 
-		#region Methods
+        #region Methods
 
-		public int CalculateAge()
-		{
+        public int CalculateAge()
+        {
             int age = 0;
             DateTime TODAY = DateTime.Today;
             return age = TODAY.Year - DOB.Year;
             //return UnknownValue;
-		}
-
-		public int CalculateMaxHeartRate()
-		{
-            int rate = 0;
-            return rate = 220 - CalculateAge();
-			//return UnknownValue;
-		}
-
-		public decimal CalculateBMI()
-		{
-            decimal bmi = 0;
-            return bmi = Math.Round((WeightInPounds * 703.00m) / (HeightInInches * HeightInInches),2);
-			//return UnknownValue;
-		}
-
-		public void DisplayPatientProfile()
-		{
-            Console.WriteLine("\nDisplaying Patient Profile: \n---------------------------- \n----------------------------");
-            Console.WriteLine("First Name: "+FirstName);
-            Console.WriteLine("Last Name: "+LastName);
-            Console.WriteLine("Gender: "+gender);
-            Console.WriteLine("Date of Birth: "+ dob);
-            Console.WriteLine("Height: "+HeightInInches+ " inches");
-            Console.WriteLine("Weight: "+WeightInPounds+ " pounds");
-            Console.WriteLine("Age: "+CalculateAge());
-            Console.WriteLine("Max Heart Rate: " +CalculateMaxHeartRate());
-            Console.WriteLine("BMI: "+CalculateBMI());
         }
 
-		#endregion
-	}
+        public int CalculateMaxHeartRate()
+        {
+            int rate = 0;
+            return rate = 220 - CalculateAge();
+            //return UnknownValue;
+        }
+
+        public decimal CalculateBMI()
+        {
+            decimal bmi = 0;
+            return bmi = Math.Round((WeightInPounds * 703.00m) / (HeightInInches * HeightInInches), 2);
+            //return UnknownValue;
+        }
+
+        public void DisplayPatientProfile()
+        {
+            Console.WriteLine("\nDisplaying Patient Profile: \n---------------------------- \n----------------------------");
+            Console.WriteLine("First Name: " + FirstName);
+            Console.WriteLine("Last Name: " + LastName);
+            Console.WriteLine("Gender: " + gender);
+            Console.WriteLine("Date of Birth: " + dob);
+            Console.WriteLine("Height: " + HeightInInches + " inches");
+            Console.WriteLine("Weight: " + WeightInPounds + " pounds");
+            Console.WriteLine("Age: " + CalculateAge());
+            Console.WriteLine("Max Heart Rate: " + CalculateMaxHeartRate());
+            Console.WriteLine("BMI: " + CalculateBMI());
+        }
+
+        #endregion
+    }
 }
