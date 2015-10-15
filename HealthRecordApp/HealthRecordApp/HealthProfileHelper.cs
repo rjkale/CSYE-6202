@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace HealthRecordApp
 {
@@ -6,32 +7,79 @@ namespace HealthRecordApp
 	{
 		public static bool ValidateFirstName(string firstName)
 		{
+            if (Regex.IsMatch(firstName, "^[a-z]+$", RegexOptions.IgnoreCase))
+            {
+                return true;
+            }
+
 			return false;
 		}
 
 		public static bool ValidateLastName(string lastName)
 		{
-			return false;
+            if (Regex.IsMatch(lastName, "^[a-z]+$", RegexOptions.IgnoreCase))
+            {
+                return true;
+            }
+            return false;
 		}
 
 		public static bool ValidateGender(string enteredGender, ref Gender patientGender)
 		{
-			return false;
+            switch (enteredGender)
+            {
+                case ("M"):
+                case ("m"):
+                    {
+                        return true;
+                    }
+
+                case ("F"):
+                case ("f"):
+                    {
+                        return true;
+                    }
+            }
+
+            return false;
 		}
 
-		public static bool ValidateDateOfBirth(string enteredDOB, ref DateTime patientDOB)
-		{
-			return false;
+        public static bool ValidateDateOfBirth(string enteredDOB, ref DateTime patientDOB)
+        {
+            {
+                patientDOB = DateTime.Parse(enteredDOB);
+                return true;
+            }
 		}
 
 		public static bool ValidateHeight(string heightInString, ref int patientHeight)
 		{
-			return false;
+            
+            int pheight = int.Parse(heightInString);
+            if (pheight >0)
+            {
+                patientHeight = pheight;
+                return true;
+            }
+
+            else
+            {
+                return false;
+                    }
 		}
 
 		public static bool ValidateWeight(string weightInString, ref int patientWeight)
 		{
-			return false;
+            int weight = int.Parse(weightInString);
+            if (weight > 0)
+            {
+                patientWeight = weight;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 		}
 	}
 }
