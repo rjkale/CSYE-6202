@@ -15,7 +15,7 @@ namespace HealthRecordApp
         private string firstName;
         private string lastName;
         private Gender gender;
-        private DateTime DOB;
+        private DateTime dob;
         private int height;
         private int weight;
 
@@ -37,19 +37,19 @@ namespace HealthRecordApp
             set { gender = value; }
         }
 
-        public DateTime DoB
+        public DateTime DOB
         {
-            get { return DOB; }
-            set { DOB = value; }
+            get { return dob; }
+            set { dob = value; }
         }
 
-        public int Height
+        public int HeightInInches
         {
             get { return height; }
             set { height = value; }
         }
 
-        public int Weight
+        public int WeightInPounds
         {
             get { return weight; }
             set { weight = value; }
@@ -62,7 +62,7 @@ namespace HealthRecordApp
             this.weight = patientWeight;
             this.height = patientHeight;
             this.gender = gender;
-            this.DOB = dOB;
+            this.dob = dOB;
         }
         public HealthProfile()
         { }
@@ -77,7 +77,7 @@ namespace HealthRecordApp
 		{
             int age = 0;
             DateTime TODAY = DateTime.Today;
-            return age = TODAY.Year - DoB.Year;
+            return age = TODAY.Year - DOB.Year;
             //return UnknownValue;
 		}
 
@@ -91,7 +91,7 @@ namespace HealthRecordApp
 		public decimal CalculateBMI()
 		{
             decimal bmi = 0;
-            return bmi = (Weight *703.00m) / (Height * Height);
+            return bmi = Math.Round((WeightInPounds * 703.00m) / (HeightInInches * HeightInInches),2);
 			//return UnknownValue;
 		}
 
@@ -101,9 +101,9 @@ namespace HealthRecordApp
             Console.WriteLine("First Name: "+FirstName);
             Console.WriteLine("Last Name: "+LastName);
             Console.WriteLine("Gender: "+gender);
-            Console.WriteLine("Date of Birth: "+ DOB);
-            Console.WriteLine("Height: "+Height+ " inches");
-            Console.WriteLine("Weight: "+Weight+ " pounds");
+            Console.WriteLine("Date of Birth: "+ dob);
+            Console.WriteLine("Height: "+HeightInInches+ " inches");
+            Console.WriteLine("Weight: "+WeightInPounds+ " pounds");
             Console.WriteLine("Age: "+CalculateAge());
             Console.WriteLine("Max Heart Rate: " +CalculateMaxHeartRate());
             Console.WriteLine("BMI: "+CalculateBMI());

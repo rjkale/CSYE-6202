@@ -38,7 +38,7 @@ namespace HealthRecordApp
 
                             if (HealthProfileHelper.ValidateDateOfBirth(DOB, ref dateTimeInput))
                             {
-                                hp.DoB = dateTimeInput;
+                                hp.DOB = dateTimeInput;
                                 Height:
 
                                 Console.WriteLine("Please enter patient's height: ");
@@ -48,7 +48,7 @@ namespace HealthRecordApp
 
                                 if (HealthProfileHelper.ValidateHeight(inputheight, ref height))
                                 {
-                                    hp.Height = height;
+                                    hp.HeightInInches = height;
                                     Weight:
 
                                     Console.WriteLine("Please enter patient's weight: ");
@@ -57,7 +57,7 @@ namespace HealthRecordApp
 
                                     if (HealthProfileHelper.ValidateWeight(inputWeight, ref weight))
                                     {
-                                        hp.Weight = weight;
+                                        hp.WeightInPounds = weight;
 
                                         hp.DisplayPatientProfile();
                                         //HealthProfile hp1 = new HealthProfile(fName, lName, Gen, dateTimeInput, weight, height);
