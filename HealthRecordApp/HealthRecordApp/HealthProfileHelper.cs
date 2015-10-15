@@ -36,17 +36,21 @@ namespace HealthRecordApp
         {
             switch (enteredGender.ToLower())
             {
-                case ("m"):
+                case ("male"):
                     {
                         patientGender = Gender.Male;
                         return true;
                     }
-                case ("f"):
+                case ("female"):
                     {
                         patientGender = Gender.Female;
                         return true;
                     }
-              
+                case ("unspecified"):
+                    {
+                        patientGender = Gender.Unspecified;
+                        return true;
+                    }
             }
 
             return false;
