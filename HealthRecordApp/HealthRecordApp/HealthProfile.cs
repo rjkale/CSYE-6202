@@ -9,6 +9,7 @@ namespace HealthRecordApp
 		Female
 	}
 
+
 	public class HealthProfile
 	{
         private string firstName;
@@ -54,30 +55,59 @@ namespace HealthRecordApp
             set { weight = value; }
         }
 
+        public HealthProfile(string firstName, string lastName, Gender gender, DateTime dOB, int patientWeight, int patientHeight)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.weight = patientWeight;
+            this.height = patientHeight;
+            this.gender = gender;
+            this.DOB = dOB;
+        }
+        public HealthProfile()
+        { }
 
 
-		private const int UnknownValue = -1;
+
+        private const int UnknownValue = -1;
 
 		#region Methods
 
 		public int CalculateAge()
 		{
-			return UnknownValue;
+            int age = 0;
+            DateTime TODAY = DateTime.Today;
+            return age = TODAY.Year - DoB.Year;
+            //return UnknownValue;
 		}
 
 		public int CalculateMaxHeartRate()
 		{
-			return UnknownValue;
+            int rate = 0;
+            return rate = 220 - CalculateAge();
+			//return UnknownValue;
 		}
 
 		public decimal CalculateBMI()
 		{
-			return UnknownValue;
+            decimal bmi = 0;
+            return bmi = (Weight *703) / (Height * Height);
+			//return UnknownValue;
 		}
 
 		public void DisplayPatientProfile()
 		{
-		}
+            Console.WriteLine("\nDisplaying Patient Profile: \n---------------------------- \n----------------------------");
+            Console.WriteLine("First Name: "+FirstName);
+            Console.WriteLine("Last Name: "+LastName);
+            Console.WriteLine("Gender: "+gender);
+            Console.WriteLine("Date of Birth: "+ DOB);
+            Console.WriteLine("Height: "+Height+ " inches");
+            Console.WriteLine("Weight: "+Weight+ " pounds");
+            Console.WriteLine("Age: "+CalculateAge());
+            Console.WriteLine("Max Heart Rate: " +CalculateMaxHeartRate());
+            Console.WriteLine("BMI: "+CalculateBMI());
+        }
 
 		#endregion
 	}

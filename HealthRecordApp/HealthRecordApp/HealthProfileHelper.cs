@@ -47,39 +47,47 @@ namespace HealthRecordApp
         public static bool ValidateDateOfBirth(string enteredDOB, ref DateTime patientDOB)
         {
             {
-                patientDOB = DateTime.Parse(enteredDOB);
-                return true;
+                DateTime db = new DateTime();
+                if (DateTime.TryParse(enteredDOB, out db))
+                {
+                    patientDOB = db;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }                
             }
 		}
 
 		public static bool ValidateHeight(string heightInString, ref int patientHeight)
 		{
-            
-            int pheight = int.Parse(heightInString);
-            if (pheight >0)
+            int h = 0;
+            if (int.TryParse(heightInString, out h))
+                
             {
-                patientHeight = pheight;
+                if (h > 0)
+                    patientHeight = h;
                 return true;
             }
-
             else
             {
                 return false;
-                    }
+            }
 		}
 
 		public static bool ValidateWeight(string weightInString, ref int patientWeight)
 		{
-            int weight = int.Parse(weightInString);
-            if (weight > 0)
+            int w = 0;
+            if (int.TryParse(weightInString,out w))
             {
-                patientWeight = weight;
-                return true;
+                    patientWeight = w;
+                    return true;  
             }
             else
             {
                 return false;
             }
-		}
+        }
 	}
 }
