@@ -59,9 +59,9 @@ namespace HealthRecordApp
                                     {
                                         hp.Weight = weight;
 
-                                        //hp.DisplayPatientProfile();
-                                        HealthProfile hp1 = new HealthProfile(fName, lName, Gen, dateTimeInput, weight, height);
-                                        hp1.DisplayPatientProfile();
+                                        hp.DisplayPatientProfile();
+                                        //HealthProfile hp1 = new HealthProfile(fName, lName, Gen, dateTimeInput, weight, height);
+                                        //hp1.DisplayPatientProfile();
                                     }
                                     else
                                     {

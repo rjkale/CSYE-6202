@@ -91,7 +91,7 @@ namespace HealthRecordApp
 		public decimal CalculateBMI()
 		{
             decimal bmi = 0;
-            return bmi = (Weight *703) / (Height * Height);
+            return bmi = (Weight *703.00m) / (Height * Height);
 			//return UnknownValue;
 		}
 
