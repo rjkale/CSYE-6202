@@ -25,6 +25,7 @@ namespace WindowsFormsApplication
         {
             if (checkforEmpty() == true)
             {
+
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pc\Source\Repos\CSYE-6202_New\WindowsFormsApplication\WindowsFormsApplication\Database.mdf;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand(" Insert into Student (Student_ID,FirstName,LastName,Department,Enrollment_Type) VALUES('" + txtBoxStudentId.Text + "','" + txtBoxFirstName.Text + "' ,'" + txtBoxLastName.Text + "'  , '" + cboBoxDepartment.SelectedItem.ToString()+ "', '" + GetRadioButtonValue().ToString() + "')", con);
