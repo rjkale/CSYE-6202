@@ -16,7 +16,7 @@ namespace WindowsFormsApplication
         public LoginForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -28,34 +28,34 @@ namespace WindowsFormsApplication
 
 
             int count = 0;
-            
-                if (dt.Rows[0][0].ToString() == "1")
-                {
-                    this.Hide();
-                    HomePageForm hp = new HomePageForm();
-                    hp.Show();
-                }
 
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                this.Hide();
+                HomePageForm hp = new HomePageForm();
+                hp.Show();
+            }
+
+            else
+            {
+                count = count++;
+
+                if (count == 3)
+                {
+                    Application.Exit();
+                }
                 else
                 {
-                    count = count++;
-
-                    if (count == 3)
-                    {
-                        Application.Exit();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid User Name or Password");
-                        txtBoxUserName.Clear();
-                        txtBoxPassword.Clear();
-
-                    }
+                    MessageBox.Show("Invalid User Name or Password");
+                    txtBoxUserName.Clear();
+                    txtBoxPassword.Clear();
 
                 }
 
-
             }
+
+
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
