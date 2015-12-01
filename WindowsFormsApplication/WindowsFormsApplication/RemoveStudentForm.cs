@@ -34,6 +34,8 @@ namespace WindowsFormsApplication
         private void btnReset_Click(object sender, EventArgs e)
         {
             ActiveForm.Close();
+            HomePageForm hp = new HomePageForm();
+            hp.Show();
         }
 
         private void populate()

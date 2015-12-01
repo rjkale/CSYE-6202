@@ -15,18 +15,17 @@ namespace WindowsFormsApplication
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pc\Source\Repos\CSYE-6202_New\WindowsFormsApplication\WindowsFormsApplication\Database.mdf;Integrated Security=True");
 
-        String FName;
-        String LName;
-        String SId;
-        String Dept;
-        String EnrolType;
+        private String FName;
+        private String LName;
+        private String SId;
+        private String Dept;
+        private String EnrolType;
 
         public HomePageForm()
         {
             InitializeComponent();
             DataGridView();
-            dataGridView1.Refresh();
-                       
+            dataGridView1.Refresh();                       
         }
 
         private void button1_Click(object sender, EventArgs e)

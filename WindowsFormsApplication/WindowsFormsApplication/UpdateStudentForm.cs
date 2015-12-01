@@ -50,7 +50,10 @@ namespace WindowsFormsApplication
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            
             ActiveForm.Close();
+            HomePageForm hp = new HomePageForm();
+            hp.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
