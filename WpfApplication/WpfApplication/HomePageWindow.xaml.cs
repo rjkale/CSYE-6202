@@ -48,7 +48,16 @@ namespace WpfApplication
             sda.Fill(dt);
             
             dataGrid.ItemsSource = dt.DefaultView;
-            
+
+
+            cboBoxDepartment.Items.Add("Information Systems");
+            cboBoxDepartment.Items.Add("International Affairs");
+            cboBoxDepartment.Items.Add("Nursing");
+            cboBoxDepartment.Items.Add("Pharmacy");
+            cboBoxDepartment.Items.Add("Professional Studies");
+            cboBoxDepartment.Items.Add("Psychology");
+            cboBoxDepartment.Items.Add("Public Administration");
+
         }
 
 
@@ -83,7 +92,7 @@ namespace WpfApplication
                 txtBoxSudentId.Text = SId;
                 txtBoxFirstName.Text = FName;
                 txtBoxLastName.Text = LName;
-                cboBoxDepartment.SelectedItem = Dept;
+                cboBoxDepartment.SelectedValue = Dept;
 
                 if ("Full-Time" == EnrolType)
                 {

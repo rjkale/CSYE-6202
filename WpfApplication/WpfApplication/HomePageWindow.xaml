@@ -20,9 +20,7 @@
         <Label x:Name="label_Copy1" Content="Last Name" HorizontalAlignment="Left" Margin="41,121,0,0" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="label_Copy2" Content="Department" HorizontalAlignment="Left" Margin="41,158,0,0" VerticalAlignment="Top" Width="107"/>
         <ComboBox x:Name="cboBoxDepartment" HorizontalAlignment="Left" Margin="181,158,0,0" VerticalAlignment="Top" Width="120" Height="26" IsEnabled="False">
-            <ComboBox.GroupStyle>
-                <GroupStyle HeaderStringFormat="Information Systems"/>
-            </ComboBox.GroupStyle>
+           
         </ComboBox>
         <RadioButton x:Name="radioBtnPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="516,109,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="650,37,0,0" VerticalAlignment="Top" Width="97" Height="42"/>

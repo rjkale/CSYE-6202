@@ -50,8 +50,9 @@ namespace WpfApplication
                 {
                     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pc\Source\Repos\CSYE-6202_New\WindowsFormsApplication\WindowsFormsApplication\Database.mdf;Integrated Security=True");
                     con.Open();
-                    //SqlCommand cmd = new SqlCommand("Update Student set FirstName ='" +txtBoxFirstName.Text+ "' , LastName =  '" +txtBoxLastName.Text+ "' , Department =  '" +cboBoxDepartment.SelectedValue.ToString()+ "' , Enrollment_Type =  '" +GetRadioButtonValue()+ "'  where Student_ID = '" +SId+ "' ", con);
-                    SqlCommand cmd = new SqlCommand("Update Student set FirstName ='" + txtBoxFirstName.Text + "' , LastName =  '" + txtBoxLastName.Text + "' , Enrollment_Type =  '" + GetRadioButtonValue() + "'  where Student_ID = '" + SId + "' ", con);
+                    String command = "Update Student set FirstName ='" + txtBoxFirstName.Text + "' , LastName =  '" + txtBoxLastName.Text + "' , Department =  '" + cboBoxDepartment.SelectedValue.ToString() + "' , Enrollment_Type =  '" + GetRadioButtonValue() + "'  where Student_ID = '" + SId + "' ";
+                    SqlCommand cmd = new SqlCommand(command, con);
+                    //SqlCommand cmd = new SqlCommand("Update Student set FirstName ='" + txtBoxFirstName.Text + "' , LastName =  '" + txtBoxLastName.Text + "' , Enrollment_Type =  '" + GetRadioButtonValue() + "'  where Student_ID = '" + SId + "' ", con);
 
                     cmd.ExecuteNonQuery();
                     con.Close();

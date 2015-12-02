@@ -17,21 +17,11 @@
         <Label x:Name="label_Copy1" Content="Last Name" HorizontalAlignment="Left" Margin="42,119,0,0" VerticalAlignment="Top" Width="107" FontSize="14.667"/>
         <Label x:Name="label_Copy2" Content="Department" HorizontalAlignment="Left" Margin="42,156,0,0" VerticalAlignment="Top" Width="107" FontSize="14.667"/>
         <ComboBox x:Name="cboBoxDepartment" HorizontalAlignment="Left" Margin="181,158,-31,0" VerticalAlignment="Top" Width="142" Height="26" IsEnabled="False">
-            <ComboBox.GroupStyle>
-                <GroupStyle HeaderStringFormat="Information Systems"/>
-            </ComboBox.GroupStyle>
-            <ComboBoxItem Content="Information Systems"/>
-            <ComboBoxItem Content="International Affairs"/>
-            <ComboBoxItem Content="Nursing"/>
-            <ComboBoxItem Content="Pharmacy"/>
-            <ComboBoxItem Content="Professional Studies"/>
-            <ComboBoxItem Content="Psychology"/>
-            <ComboBoxItem Content="Public Administration"/>
         </ComboBox>
         <Button x:Name="btnReset" Content="Cancel" HorizontalAlignment="Left" Margin="494,229,0,0" VerticalAlignment="Top" Width="137" Height="42" FontSize="14" Click="btnReset_Click" />
         <Button x:Name="btnAdd" Content="Remove" HorizontalAlignment="Left" Margin="313,229,0,0" VerticalAlignment="Top" Width="137" Height="42" FontSize="14" Click="btnAdd_Click_1" />
-        <RadioButton x:Name="radioBtnFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="393,109,0,0" VerticalAlignment="Top" IsChecked="True" />
-        <RadioButton x:Name="radioBtnPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="516,109,0,0" VerticalAlignment="Top" />
+        <RadioButton x:Name="radioBtnFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="393,109,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False" />
+        <RadioButton x:Name="radioBtnPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="516,109,0,0" VerticalAlignment="Top" IsEnabled="False" />
 
     </Grid>
 </Window>
