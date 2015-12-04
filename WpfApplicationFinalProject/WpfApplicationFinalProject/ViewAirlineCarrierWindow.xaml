@@ -1,0 +1,13 @@
+﻿<Window x:Class="WpfApplicationFinalProject.ViewAirlineCarrierWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationFinalProject"
+        mc:Ignorable="d"
+        Title="View Airline Carriers" Height="488.51" Width="589.362">
+    <Grid>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="88,384,0,0" VerticalAlignment="Top" Width="130" Height="38" Click="btnBack_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApplicationFinalProject.CarrierHomePageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationFinalProject"
+        mc:Ignorable="d"
+        Title="Carrier HomePage" Height="352.128" Width="585.106">
+    <Grid>
+        <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="179,18,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
+        <Button x:Name="btnViewFlightBookins" Content="View Fligh Bookings" HorizontalAlignment="Left" Margin="188,77,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnViewFlightBookins_Click"/>
+        <Button x:Name="btnAddFlight" Content="Add Flights" HorizontalAlignment="Left" Margin="187,141,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnAddFlight_Click"/>
+        <Button x:Name="btnUpdateFlight" Content="Update Flight Details" HorizontalAlignment="Left" Margin="187,203,0,0" VerticalAlignment="Top" Width="143" Height="38"/>
+
+    </Grid>
+</Window>

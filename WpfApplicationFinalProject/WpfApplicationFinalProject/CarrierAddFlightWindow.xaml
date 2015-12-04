@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfApplicationFinalProject.AddFlightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationFinalProject"
+        mc:Ignorable="d"
+        Title="Add Flight" Height="322.659" Width="498.937">
+    <Grid>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="57,237,0,0" VerticalAlignment="Top" Width="119" Height="34" Click="btnBack_Click"/>
+        <Button x:Name="btnAddFlight" Content="Add A Flight" HorizontalAlignment="Left" Margin="308,237,0,0" VerticalAlignment="Top" Width="119" Height="34"/>
+
+    </Grid>
+</Window>
