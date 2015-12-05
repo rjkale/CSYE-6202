@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Add Flight" Height="797.379" Width="716.331">
+        Title="Add Flight" Height="707.379" Width="663.831">
     <Grid>
 
-        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="154,664,0,0" VerticalAlignment="Top" Width="119" Height="34" Click="btnBack_Click"/>
-        <Button x:Name="btnAddFlight" Content="Add A Flight" HorizontalAlignment="Left" Margin="405,664,0,0" VerticalAlignment="Top" Width="119" Height="34" Click="btnAddFlight_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="174,606,0,0" VerticalAlignment="Top" Width="118" Height="34" Click="btnBack_Click"/>
+        <Button x:Name="btnAddFlight" Content="Add A Flight" HorizontalAlignment="Left" Margin="424,606,0,0" VerticalAlignment="Top" Width="120" Height="34" Click="btnAddFlight_Click"/>
         <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="250,36,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
         <Label x:Name="label1" Content="Flight Name" HorizontalAlignment="Left" Margin="180,101,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
         <TextBox x:Name="txtBoxFlightName" HorizontalAlignment="Left" Height="37" Margin="357,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10"/>
