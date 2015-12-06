@@ -56,8 +56,6 @@ namespace WpfApplicationFinalProject
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-
-
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
             string name = txtBoxName.Text;
@@ -73,13 +71,17 @@ namespace WpfApplicationFinalProject
                 {
 
                     SignUpDataClass signup = new SignUpDataClass();
-                    if (signup.signupCustomer(username, password, name, city, phone, gender, age) == true)
+                    if (signup.addToUserLoginTable(username, password, name) == true)
                     {
-                        MessageBox.Show("User Entered");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter valid user name");
+                        if (signup.signupCustomer(username, password, name, city, phone, gender, age) == true)
+                        {
+                            MessageBox.Show("User Entered");
+                            cleartext();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter valid user name");
+                        }
                     }
                 }
                 else
@@ -119,22 +121,7 @@ namespace WpfApplicationFinalProject
 
         private void addtoLoginTable()
         {
-            DBconnection objcon = new DBconnection();
-            objcon.Connections();
             
-            string username = txtBoxUsername.Text;
-            string password = txtBoxPassword.Text;
-            string name = txtBoxName.Text;
-            string role = "cus";
-
-            string query = "Insert into LoginTable values(@username,@password,@role,@name)";
-            SqlCommand cmd = new SqlCommand(query, objcon.con);
-
-            cmd.Parameters.Add(new SqlParameter("@username", username));
-            cmd.Parameters.Add(new SqlParameter("@password", password));
-            cmd.Parameters.Add(new SqlParameter("@name", name));
-            cmd.Parameters.Add(new SqlParameter("@role", role));
-            cmd.ExecuteNonQuery();
         }
 
         private Boolean Checkusername()

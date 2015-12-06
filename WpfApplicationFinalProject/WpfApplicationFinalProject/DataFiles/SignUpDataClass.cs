@@ -41,9 +41,30 @@ namespace WpfApplicationFinalProject.DataFiles
             
         }
 
+        public Boolean addToUserLoginTable(string username, string password, string name)
+        {
+            try
+            {
+                objcon.Connections();
+                string role = "cus";
 
-        
-            
-        
+                string query = "Insert into LoginTable values(@username,@password,@role,@name)";
+                SqlCommand cmd = new SqlCommand(query, objcon.con);
+
+                cmd.Parameters.Add(new SqlParameter("@username", username));
+                cmd.Parameters.Add(new SqlParameter("@password", password));
+                cmd.Parameters.Add(new SqlParameter("@name", name));
+                cmd.Parameters.Add(new SqlParameter("@role", role));
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+         
     }
 }
