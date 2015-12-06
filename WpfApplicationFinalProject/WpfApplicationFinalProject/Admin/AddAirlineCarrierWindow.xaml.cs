@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
 {
@@ -30,42 +31,31 @@ namespace WpfApplicationFinalProject
             string username = txtBoxUsername.Text;
             string password = passwordBox.Password;
             string companyName = txtBoxCompanyName.Text;
-            string role = "ac";
-
-
-            DBconnection objcon = new DBconnection();
-            objcon.Connections();
-
 
             if (Checkusername())
             {
-
-
 
                 if (checkforEmpty() == true)
                 {
                     try
                     {
-                        string query = "Insert into LoginTable values(@username,@password,@name,@role)";
-                        SqlCommand cmd = new SqlCommand(query, objcon.con);
-
-                        cmd.Parameters.Add(new SqlParameter("@username", username));
-                        cmd.Parameters.Add(new SqlParameter("@password", password));
-                        cmd.Parameters.Add(new SqlParameter("@name", companyName));
-                        cmd.Parameters.Add(new SqlParameter("@role", role));
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Airline Carrier Created successful");
-                        this.Hide();
-                        AdminHomePageWindow ahome = new AdminHomePageWindow();
-                        ahome.Show();
-
+                        AdminDataClass admin = new AdminDataClass();
+                        if (admin.addToLoginTable(username, password, companyName) == true)
+                        {
+                            MessageBox.Show("Airline Carrier Created successful");
+                            this.Hide();
+                            AdminHomePageWindow ahome = new AdminHomePageWindow();
+                            ahome.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("");
+                        }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
-                        MessageBox.Show("Error adding the user. Please try again" + ex);
+                        MessageBox.Show("Error adding the user. Please try again");
                     }
-                    objcon.con.Close();
 
                 }
 

@@ -68,9 +68,11 @@
       <DependentUpon>CarrierHomePageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Person.cs" />
+    <Compile Include="Class\User.cs" />
     <Compile Include="Customer\CustomerHomePageWindow.xaml.cs">
       <DependentUpon>CustomerHomePageWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataFiles\AdminDataClass.cs" />
     <Compile Include="DataFiles\DBconnection.cs" />
     <Compile Include="DataFiles\LoginDataClass.cs" />
     <Compile Include="DataFiles\SignUpDataClass.cs" />

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class Person : User
+    class User
     {
-        public string Role { set; get; }
-
+        public string userName { set; get; }
+        public string password { set; get; }
     }
 }
