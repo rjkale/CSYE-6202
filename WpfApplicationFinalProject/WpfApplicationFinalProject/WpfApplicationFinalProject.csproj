@@ -55,48 +55,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddAirlineCarrierWindow.xaml.cs">
+    <Compile Include="Admin\AddAirlineCarrierWindow.xaml.cs">
       <DependentUpon>AddAirlineCarrierWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CarrierAddFlightWindow.xaml.cs">
+    <Compile Include="Carrier\CarrierAddFlightWindow.xaml.cs">
       <DependentUpon>CarrierAddFlightWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminHomePageWindow.xaml.cs">
+    <Compile Include="Admin\AdminHomePageWindow.xaml.cs">
       <DependentUpon>AdminHomePageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CarrierHomePageWindow.xaml.cs">
+    <Compile Include="Carrier\CarrierHomePageWindow.xaml.cs">
       <DependentUpon>CarrierHomePageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomerHomePageWindow.xaml.cs">
+    <Compile Include="Class\Person.cs" />
+    <Compile Include="Customer\CustomerHomePageWindow.xaml.cs">
       <DependentUpon>CustomerHomePageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBconnection.cs" />
-    <Compile Include="SignInWindow.xaml.cs">
+    <Compile Include="DataFiles\DBconnection.cs" />
+    <Compile Include="DataFiles\LoginDataClass.cs" />
+    <Compile Include="HomePage and Signup\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignUp.xaml.cs">
+    <Compile Include="HomePage and Signup\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewAirlineCarrierWindow.xaml.cs">
+    <Compile Include="Admin\ViewAirlineCarrierWindow.xaml.cs">
       <DependentUpon>ViewAirlineCarrierWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddAirlineCarrierWindow.xaml">
+    <Page Include="Admin\AddAirlineCarrierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CarrierAddFlightWindow.xaml">
+    <Page Include="Carrier\CarrierAddFlightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminHomePageWindow.xaml">
+    <Page Include="Admin\AdminHomePageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CarrierHomePageWindow.xaml">
+    <Page Include="Carrier\CarrierHomePageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomerHomePageWindow.xaml">
+    <Page Include="Customer\CustomerHomePageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,15 +114,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SignInWindow.xaml">
+    <Page Include="HomePage and Signup\SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SignUp.xaml">
+    <Page Include="HomePage and Signup\SignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewAirlineCarrierWindow.xaml">
+    <Page Include="Admin\ViewAirlineCarrierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
