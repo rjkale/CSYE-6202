@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
 {
@@ -62,43 +63,25 @@ namespace WpfApplicationFinalProject
             string name = txtBoxName.Text;
             string city = txtCIty.Text;
             string phone = txtBoxPhone.Text;
-            string gender = coBoxAge.SelectedValue.ToString();
+            string gender = coBoxGender.SelectedValue.ToString();
             string age = coBoxAge.SelectedValue.ToString();
 
-            DBconnection objcon = new DBconnection();
-            objcon.Connections();
             if (Checkusername())
             {
-
-
-
+                
                 if (checkforEmpty() == true)
                 {
-                    string query = "Insert into CustomerDatabaseTable values(@username,@password,@name, @city, @phone, @gender, @age)";
-                    SqlCommand cmd = new SqlCommand(query, objcon.con);
 
-                    cmd.Parameters.Add(new SqlParameter("@username", username));
-                    cmd.Parameters.Add(new SqlParameter("@password", password));
-                    cmd.Parameters.Add(new SqlParameter("@name", name));
-                    cmd.Parameters.Add(new SqlParameter("@city", city));
-                    cmd.Parameters.Add(new SqlParameter("@phone", phone));
-                    cmd.Parameters.Add(new SqlParameter("@gender", gender));
-                    cmd.Parameters.Add(new SqlParameter("@age", age));
-                    cmd.ExecuteNonQuery();
-                    try
+                    SignUpDataClass signup = new SignUpDataClass();
+                    if (signup.signupCustomer(username, password, name, city, phone, gender, age) == true)
                     {
-                        MessageBox.Show("User Created successful");
-                        addtoLoginTable();
-                        cleartext();
+                        MessageBox.Show("User Entered");
                     }
-                    catch (SqlException ex)
+                    else
                     {
-                        MessageBox.Show("Error adding the user. Please try again" + ex);
+                        MessageBox.Show("Please enter valid user name");
                     }
-                    objcon.con.Close();
-
                 }
-
                 else
                 {
                     MessageBox.Show("Please fill all values");

@@ -39,13 +39,9 @@ namespace WpfApplicationFinalProject
                     return person;
                 }
             }
-            
-            
+
                 person.Role = "incorrect";
                 return person;
-            
-           
-            
         }
 
 

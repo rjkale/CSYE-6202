@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="DataFiles\DBconnection.cs" />
     <Compile Include="DataFiles\LoginDataClass.cs" />
+    <Compile Include="DataFiles\SignUpDataClass.cs" />
     <Compile Include="HomePage and Signup\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
