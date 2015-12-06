@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class Person : User
+    class FlightCarrier :Person
     {
-        public string Role { set; get; }
+        public string Name { set; get; }
+
     }
 }

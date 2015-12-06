@@ -11,6 +11,7 @@
         <Button x:Name="btnViewFlightBookins" Content="View Fligh Bookings" HorizontalAlignment="Left" Margin="188,77,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnViewFlightBookins_Click"/>
         <Button x:Name="btnAddFlight" Content="Add Flights" HorizontalAlignment="Left" Margin="187,141,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnAddFlight_Click"/>
         <Button x:Name="btnUpdateFlight" Content="Update Flight Details" HorizontalAlignment="Left" Margin="187,203,0,0" VerticalAlignment="Top" Width="143" Height="38"/>
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="404,280,0,0" VerticalAlignment="Top" Width="75" Click="btnLogOut_Click"/>
 
     </Grid>
 </Window>

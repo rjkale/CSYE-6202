@@ -37,5 +37,12 @@ namespace WpfApplicationFinalProject
             AddFlightWindow addflight = new AddFlightWindow();
             addflight.Show();
         }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mw = new MainWindow();
+            mw.Show();
+        }
     }
 }

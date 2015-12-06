@@ -27,6 +27,8 @@ namespace WpfApplicationFinalProject
         private void button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            MainWindow mw = new MainWindow();
+            mw.Show();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)

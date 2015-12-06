@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
 {
@@ -22,7 +25,33 @@ namespace WpfApplicationFinalProject
         public ViewAirlineCarrierWindow()
         {
             InitializeComponent();
+            LoadDataGridview();
         }
+
+        private void LoadDataGridview()
+        {
+            AdminDataClass admin = new AdminDataClass();
+            DataTable dt = admin.loadDataGridView1();
+            dataGrid.ItemsSource = dt.DefaultView;
+
+            //dataGrid.ItemsSource =  admin.loadDataGridView();
+
+            /*
+            List<FlightCarrier> Fc =  admin.loadDataGridView();
+            if (Fc != null)
+            { 
+                foreach (var item in Fc)
+                {
+                    dataGrid.ItemsSource = item.Name;
+                }
+            }
+            else
+            {
+                MessageBox.Show("List is returning null"+Fc);
+            } 
+            */
+        }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
