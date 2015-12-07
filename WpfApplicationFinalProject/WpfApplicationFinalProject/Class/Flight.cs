@@ -18,6 +18,22 @@ namespace WpfApplicationFinalProject.Class
         public string ClassType { set; get; }
         public string NumberofSeats { set; get; }
         public string userName { set; get; }
+        //public string economyPrice { set; get; }
+        public string businessPrice { set; get; }
+        public string economyPlusPrice { set; get; }
 
+        public String getBusinessPrice(String economy)
+        {
+            int i = Convert.ToInt32(economy);
+            int result = i * 4;
+            return Convert.ToString(result);
+        }
+
+        public String geteconomyPlusPrice(String economy)
+        {
+            int i = Convert.ToInt32(economy);
+            int result = i * 2;
+            return Convert.ToString(result);
+        }
     }
 }

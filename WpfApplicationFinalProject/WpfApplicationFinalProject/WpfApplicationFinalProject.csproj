@@ -67,7 +67,6 @@
     <Compile Include="Carrier\CarrierHomePageWindow.xaml.cs">
       <DependentUpon>CarrierHomePageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class\FairCalculation.cs" />
     <Compile Include="Class\Flight.cs" />
     <Compile Include="Class\FlightCarrier.cs" />
     <Compile Include="Class\Person.cs" />

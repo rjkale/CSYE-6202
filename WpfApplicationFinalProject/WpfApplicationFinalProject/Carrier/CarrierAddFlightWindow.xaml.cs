@@ -23,6 +23,7 @@ namespace WpfApplicationFinalProject
     public partial class AddFlightWindow : Window
     {
         Person p;
+        String Datee;
         public AddFlightWindow(Person p)
         {
             InitializeComponent();
@@ -98,28 +99,37 @@ namespace WpfApplicationFinalProject
 
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
+
+            Flight flight = new Flight();
+
             string flightName = txtBoxFlightName.Text;
             string flightnumber = txtBoxFlightNumber.Text;
             string sourceCity = coBoxSourceCity.SelectedValue.ToString();
             string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
-            string date = "date";                                       //DatePicker.SelectedDateProperty.ToString();
+            string date = DatePicker.SelectedDateProperty.ToString();
             string duration = coBoxDuration.SelectedValue.ToString();
             string fare = txtFare.Text;
             string ClassType = coBoxClass.SelectedValue.ToString();
             string NumberofSeats = coBoxSeats.SelectedValue.ToString();
             string userName = p.username.ToString();
+            string economyPlusPrice = flight.geteconomyPlusPrice(fare);
+            string BusinessPrice = flight.getBusinessPrice(fare);
 
-            Flight flight = new Flight();
+
+
             flight.flightName = flightName;
             flight.flightnumber = flightnumber;
             flight.sourceCity = sourceCity;
             flight.destinationCity = destinationCity;
-            flight.date = date;
+            flight.date = "datesde";
             flight.duration = duration;
             flight.fare = fare;
             flight.ClassType = ClassType;
             flight.NumberofSeats = NumberofSeats;
             flight.userName = userName;
+            flight.economyPlusPrice = economyPlusPrice;
+            flight.businessPrice = BusinessPrice;
+
             
 
             if (checkforEmpty() == true)
@@ -128,7 +138,6 @@ namespace WpfApplicationFinalProject
                 if (cd.addToCarrierTable(flight) == true)
                 {
                     MessageBox.Show("Flight Added successfully");
-
                 }
                 else
                 {
@@ -153,6 +162,11 @@ namespace WpfApplicationFinalProject
             { return false; }
             else
                 return true;
+        }
+
+        private void DateT_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
  }

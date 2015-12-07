@@ -25,9 +25,11 @@ namespace WpfApplicationFinalProject.DataFiles
                 string ClassType = flight.ClassType;
                 string NumberofSeats = flight.NumberofSeats;
                 string userName = flight.userName;
+                string businessPrice = flight.businessPrice;
+                string economyPlus = flight.economyPlusPrice;
 
                 objcon.Connections();
-                string query = "Insert into FlightDetailsTable values(@flightName,@flightNumber,@sourceCity,@destinationCity,@date, @flightDuration,@fare,@class,@numberOfSeats,@userName)";
+                string query = "Insert into FlightDetailsTable values(@flightName,@flightNumber,@sourceCity,@destinationCity,@date, @flightDuration,@fare,@class,@numberOfSeats,@userName,@businessPrice,@economyPlus)";
                 SqlCommand cmd = new SqlCommand(query, objcon.con);
                 cmd.Parameters.Add(new SqlParameter("@flightName", flightName));
                 cmd.Parameters.Add(new SqlParameter("@flightNumber", flightnumber));
@@ -39,6 +41,8 @@ namespace WpfApplicationFinalProject.DataFiles
                 cmd.Parameters.Add(new SqlParameter("@class", ClassType));
                 cmd.Parameters.Add(new SqlParameter("@numberOfSeats", NumberofSeats));
                 cmd.Parameters.Add(new SqlParameter("@userName", userName));
+                cmd.Parameters.Add(new SqlParameter("@businessPrice", businessPrice));
+                cmd.Parameters.Add(new SqlParameter("@economyPlus", economyPlus));
                 cmd.ExecuteNonQuery();
                 return true;
             }
