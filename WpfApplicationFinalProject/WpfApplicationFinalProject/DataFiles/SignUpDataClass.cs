@@ -13,8 +13,16 @@ namespace WpfApplicationFinalProject.DataFiles
     {
         DBconnection objcon = new DBconnection();
 
-        public Boolean signupCustomer(string username, string password, string name, string city, string phone, string gender, string age)
+        public Boolean signupCustomer(Person p)
         {
+            string username =  p.username;
+            string password = p.password;
+            string name = p.name;
+            string city = p.city;
+            string phone = p.phone;
+            string gender = p.gender;
+            string age = p.age;
+
             try
             {
             objcon.Connections();
@@ -41,8 +49,13 @@ namespace WpfApplicationFinalProject.DataFiles
             
         }
 
-        public Boolean addToUserLoginTable(string username, string password, string name)
+        public Boolean addToUserLoginTable(Person person)
         {
+
+            string username = person.username;
+            string password = person.password;
+            string name = person.name;
+
             try
             {
                 objcon.Connections();

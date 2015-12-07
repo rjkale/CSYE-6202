@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using WpfApplicationFinalProject.DataFiles;
+using WpfApplicationFinalProject.Class;
 
 namespace WpfApplicationFinalProject
 {
@@ -64,6 +65,15 @@ namespace WpfApplicationFinalProject
             string gender = coBoxGender.SelectedValue.ToString();
             string age = coBoxAge.SelectedValue.ToString();
 
+            Person person = new Person();
+            person.username = username;
+            person.password = password;
+            person.name = name;
+            person.city = city;
+            person.phone = phone;
+            person.gender = gender;
+            person.age = age;
+
             if (Checkusername())
             {
                 
@@ -71,9 +81,9 @@ namespace WpfApplicationFinalProject
                 {
 
                     SignUpDataClass signup = new SignUpDataClass();
-                    if (signup.addToUserLoginTable(username, password, name) == true)
+                    if (signup.addToUserLoginTable(person) == true)
                     {
-                        if (signup.signupCustomer(username, password, name, city, phone, gender, age) == true)
+                        if (signup.signupCustomer(person) == true)
                         {
                             MessageBox.Show("User Entered");
                             cleartext();

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
 using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
@@ -21,9 +22,11 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class AddAirlineCarrierWindow : Window
     {
-        public AddAirlineCarrierWindow()
+        Person p;
+        public AddAirlineCarrierWindow(Person p)
         {
             InitializeComponent();
+            this.p = p;
         }
 
         private void btnAddCarrier_Click(object sender, RoutedEventArgs e)
@@ -32,24 +35,28 @@ namespace WpfApplicationFinalProject
             string password = passwordBox.Password;
             string companyName = txtBoxCompanyName.Text;
 
+            FlightCarrier fc = new FlightCarrier();
+            fc.username = username;
+            fc.password = password;
+            fc.CompanyName = companyName;
+
             if (Checkusername())
             {
-
                 if (checkforEmpty() == true)
                 {
                     try
                     {
                         AdminDataClass admin = new AdminDataClass();
-                        if (admin.addToLoginTable(username, password, companyName) == true)
+                        if (admin.addToLoginTable(fc) == true)
                         {
                             MessageBox.Show("Airline Carrier Created successful");
                             this.Hide();
-                            AdminHomePageWindow ahome = new AdminHomePageWindow();
+                            AdminHomePageWindow ahome = new AdminHomePageWindow(p);
                             ahome.Show();
                         }
                         else
                         {
-                            MessageBox.Show("");
+                            MessageBox.Show("unable to add user");
                         }
                     }
                     catch
@@ -102,7 +109,7 @@ namespace WpfApplicationFinalProject
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            AdminHomePageWindow ahome = new AdminHomePageWindow();
+            AdminHomePageWindow ahome = new AdminHomePageWindow(p);
             ahome.Show();
         }
     }

@@ -22,19 +22,21 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class ViewAirlineCarrierWindow : Window
     {
-        public ViewAirlineCarrierWindow()
+        Person p;
+        public ViewAirlineCarrierWindow(Person p)
         {
             InitializeComponent();
             LoadDataGridview();
+            this.p = p;
         }
 
         private void LoadDataGridview()
         {
             AdminDataClass admin = new AdminDataClass();
-            DataTable dt = admin.loadDataGridView1();
-            dataGrid.ItemsSource = dt.DefaultView;
+            //DataTable dt = admin.loadDataGridView1();
+            //dataGrid.ItemsSource = dt.DefaultView;
 
-            //dataGrid.ItemsSource =  admin.loadDataGridView();
+            dataGrid.ItemsSource =  admin.loadDataGridView();
 
             /*
             List<FlightCarrier> Fc =  admin.loadDataGridView();
@@ -56,8 +58,27 @@ namespace WpfApplicationFinalProject
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            AdminHomePageWindow admin = new AdminHomePageWindow();
+            AdminHomePageWindow admin = new AdminHomePageWindow(p);
             admin.Show();
+        }
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+
+            /*
+            if (dataGrid.SelectedItems.Count > 0)
+            {
+                var UserName = ((DataRowView)dataGrid.SelectedItem).Row["userName"].ToString();
+                var UserId =   ((DataRowView)dataGrid.SelectedItem).Row["Name"].ToString();
+                MessageBox.Show("UserName = "+UserName + "UserId " +UserId);
+            }
+            */
+                        
+            FlightCarrier fc = (FlightCarrier)dataGrid.SelectedValue;
+            var UserName1 = fc.CompanyName.ToString();
+            var userId1 = fc.username.ToString();
+            MessageBox.Show("UserName "+UserName1 + " UserID " +userId1);
         }
     }
 }

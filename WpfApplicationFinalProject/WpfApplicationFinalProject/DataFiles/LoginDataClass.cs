@@ -14,13 +14,16 @@ namespace WpfApplicationFinalProject
         DBconnection objcon = new DBconnection();
 
 
-        public Person getUserType(string UserName, string Password)
+        public Person getUserType(User user)
         {
             objcon.Connections();
-            
+
+            string UserName = user.username;
+            string Password = user.password;
+
             Person person = new Person();
-           //string query = "Select * from LoginTable where userName = '" + UserName + "' and password = '" + Password + "' ";
-            SqlCommand cmd = new SqlCommand("Select * from LoginTable where userName = '" + UserName + "' and password = '" + Password + "' ", objcon.con);
+            string query = "Select * from LoginTable where userName = '" + UserName + "' and password = '" + Password + "' ";
+            SqlCommand cmd = new SqlCommand(query, objcon.con);
             SqlDataReader reader = cmd.ExecuteReader();
 
 
@@ -33,7 +36,7 @@ namespace WpfApplicationFinalProject
             {
                 while (reader.Read())
                 {
-                    person.userName = reader.GetString(0).Trim();
+                    person.username = reader.GetString(0).Trim();
                     person.password = reader.GetString(1).Trim();
                     person.Role = reader.GetString(2).Trim();
                     return person;

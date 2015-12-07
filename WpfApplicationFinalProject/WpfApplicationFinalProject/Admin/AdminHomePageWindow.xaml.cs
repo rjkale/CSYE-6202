@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
 
 namespace WpfApplicationFinalProject
 {
@@ -19,9 +20,11 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class AdminHomePageWindow : Window
     {
-        public AdminHomePageWindow()
+        Person p;
+        public AdminHomePageWindow(Person p)
         {
             InitializeComponent();
+            this.p = p;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -34,7 +37,7 @@ namespace WpfApplicationFinalProject
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            AddAirlineCarrierWindow addairline = new AddAirlineCarrierWindow();
+            AddAirlineCarrierWindow addairline = new AddAirlineCarrierWindow(p);
             addairline.Show();
 
         }
@@ -42,7 +45,7 @@ namespace WpfApplicationFinalProject
         private void button_Copy1_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            ViewAirlineCarrierWindow vair = new ViewAirlineCarrierWindow();
+            ViewAirlineCarrierWindow vair = new ViewAirlineCarrierWindow(p);
             vair.Show();
         }
     }

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class FlightCarrier :Person
+    class FairCalculation
     {
-        FlightCarrier flightcarrier;
-        public string CompanyName { set; get; }
-        public FlightCarrier flightCarrier { set; get; }
+        public int Economy { set; get; }
+        public int EconomyPlus { set; get; }
+        public int Business { set; get; }
+
+
+
 
     }
 }

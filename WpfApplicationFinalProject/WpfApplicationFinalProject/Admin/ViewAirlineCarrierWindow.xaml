@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="88,384,0,0" VerticalAlignment="Top" Width="130" Height="38" Click="btnBack_Click"/>
         <Label x:Name="label" Content="View Airline Companies" HorizontalAlignment="Left" Margin="195,34,0,0" VerticalAlignment="Top" Height="33" Width="147"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="88,142,0,0" VerticalAlignment="Top" Height="182" Width="432"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="170,114,0,0" VerticalAlignment="Top" Height="182" Width="214" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
 
     </Grid>
 </Window>

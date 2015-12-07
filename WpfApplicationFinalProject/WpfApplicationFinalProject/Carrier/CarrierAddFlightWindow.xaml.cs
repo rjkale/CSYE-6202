@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
 {
@@ -106,50 +107,19 @@ namespace WpfApplicationFinalProject
             string NumberofSeats = coBoxSeats.SelectedValue.ToString();
             string userName = "user";
 
-            MessageBox.Show(flightName );
-            MessageBox.Show(flightnumber);
-            MessageBox.Show(sourceCity);
-            MessageBox.Show(destinationCity);
-            MessageBox.Show(date);
-            MessageBox.Show(duration);
-            MessageBox.Show(fare);
-            MessageBox.Show(ClassType);
-      
-            DBconnection objcon = new DBconnection();
-            objcon.Connections();
-
             if (checkforEmpty() == true)
             {
-                try
+                CarrierDataClass cd = new CarrierDataClass();
+                if (cd.addToCarrierTable(flightName, flightnumber, sourceCity, destinationCity, date, duration, fare, ClassType, NumberofSeats, userName) == true)
                 {
-                    string query = "Insert into FlightDetailsTable values(@flightName,@flightnumber,@sourceCity,@destinationCity, @date, @duration,@fare,@ClassType,@NumberofSeats,@userName)";
-                    SqlCommand cmd = new SqlCommand(query, objcon.con);
-
-                    cmd.Parameters.Add(new SqlParameter("@flightName", flightName));
-                    cmd.Parameters.Add(new SqlParameter("@flightnumber", flightnumber));
-                    cmd.Parameters.Add(new SqlParameter("@sourceCity", sourceCity));
-                    cmd.Parameters.Add(new SqlParameter("@destinationCity", destinationCity));
-                    cmd.Parameters.Add(new SqlParameter("@date", date));
-                    cmd.Parameters.Add(new SqlParameter("@duration", duration));
-                    cmd.Parameters.Add(new SqlParameter("@fare", fare));
-                    cmd.Parameters.Add(new SqlParameter("@ClassType", ClassType));
-                    cmd.Parameters.Add(new SqlParameter("@NumberofSeats", NumberofSeats));
-                    cmd.Parameters.Add(new SqlParameter("@userName", userName));
-
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Flight Added Successfully");
-                    this.Hide();
-                    CarrierHomePageWindow ca = new CarrierHomePageWindow();
-                    ca.Show();
+                    MessageBox.Show("Flight Added successfully");
 
                 }
-                catch (SqlException ex)
+                else
                 {
-                    MessageBox.Show("Error adding the user. Please try again" + ex);
+                    MessageBox.Show("Unable to enter the Flight details");
+                    MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity +" date "+ date + " duration " + duration+ " fare " + fare  + " ClassType " + ClassType+ " NumberofSeats " + NumberofSeats + " userName " + userName);
                 }
-                objcon.con.Close();
-
             }
 
             else
@@ -169,9 +139,5 @@ namespace WpfApplicationFinalProject
             else
                 return true;
         }
-
-        
-
-
     }
-    }
+ }

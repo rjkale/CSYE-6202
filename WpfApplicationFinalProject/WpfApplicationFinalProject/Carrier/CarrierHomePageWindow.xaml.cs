@@ -26,9 +26,7 @@ namespace WpfApplicationFinalProject
 
         private void btnViewFlightBookins_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            AddFlightWindow add = new AddFlightWindow();
-            add.Show();
+            
         }
 
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
