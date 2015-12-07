@@ -4,16 +4,28 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApplicationFinalProject.Class;
 
 namespace WpfApplicationFinalProject.DataFiles
 {
     class CarrierDataClass
     {
         DBconnection objcon = new DBconnection();
-        public Boolean addToCarrierTable(string flightName, string flightnumber, string sourceCity, string destinationCity, string date, string duration, string fare, string ClassType, string NumberofSeats, string userName)
+        public Boolean addToCarrierTable(Flight flight)
         {
             try
             {
+                string flightName = flight.flightName;
+                string flightnumber = flight.flightnumber;
+                string sourceCity = flight.sourceCity;
+                string destinationCity = flight.destinationCity;
+                string date = flight.date;
+                string duration = flight.duration;
+                string fare = flight.fare;
+                string ClassType = flight.ClassType;
+                string NumberofSeats = flight.NumberofSeats;
+                string userName = flight.userName;
+
                 objcon.Connections();
                 string query = "Insert into FlightDetailsTable values(@flightName,@flightNumber,@sourceCity,@destinationCity,@date, @flightDuration,@fare,@class,@numberOfSeats,@userName)";
                 SqlCommand cmd = new SqlCommand(query, objcon.con);

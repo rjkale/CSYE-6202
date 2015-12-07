@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
 
 namespace WpfApplicationFinalProject
 {
@@ -19,9 +20,11 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class CarrierHomePageWindow : Window
     {
-        public CarrierHomePageWindow()
+        Person p;
+        public CarrierHomePageWindow(Person p)
         {
             InitializeComponent();
+            this.p = p;
         }
 
         private void btnViewFlightBookins_Click(object sender, RoutedEventArgs e)
@@ -32,7 +35,7 @@ namespace WpfApplicationFinalProject
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            AddFlightWindow addflight = new AddFlightWindow();
+            AddFlightWindow addflight = new AddFlightWindow(p);
             addflight.Show();
         }
 

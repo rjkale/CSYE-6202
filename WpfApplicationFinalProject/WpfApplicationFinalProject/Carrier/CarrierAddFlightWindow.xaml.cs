@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
 using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
@@ -21,19 +22,21 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class AddFlightWindow : Window
     {
-        public AddFlightWindow()
+        Person p;
+        public AddFlightWindow(Person p)
         {
             InitializeComponent();
             populateCitiesCombobox();
             populateClassCombobox();
             populateSeatsCombobox();
             populateHoursCombobox();
+            this.p = p;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            CarrierHomePageWindow car = new CarrierHomePageWindow();
+            CarrierHomePageWindow car = new CarrierHomePageWindow(p);
             car.Show();
         }
 
@@ -99,18 +102,30 @@ namespace WpfApplicationFinalProject
             string flightnumber = txtBoxFlightNumber.Text;
             string sourceCity = coBoxSourceCity.SelectedValue.ToString();
             string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
-            string date = "date";
-                //DatePicker.SelectedDateProperty.ToString();
+            string date = "date";                                       //DatePicker.SelectedDateProperty.ToString();
             string duration = coBoxDuration.SelectedValue.ToString();
             string fare = txtFare.Text;
             string ClassType = coBoxClass.SelectedValue.ToString();
             string NumberofSeats = coBoxSeats.SelectedValue.ToString();
-            string userName = "user";
+            string userName = p.username.ToString();
+
+            Flight flight = new Flight();
+            flight.flightName = flightName;
+            flight.flightnumber = flightnumber;
+            flight.sourceCity = sourceCity;
+            flight.destinationCity = destinationCity;
+            flight.date = date;
+            flight.duration = duration;
+            flight.fare = fare;
+            flight.ClassType = ClassType;
+            flight.NumberofSeats = NumberofSeats;
+            flight.userName = userName;
+            
 
             if (checkforEmpty() == true)
             {
                 CarrierDataClass cd = new CarrierDataClass();
-                if (cd.addToCarrierTable(flightName, flightnumber, sourceCity, destinationCity, date, duration, fare, ClassType, NumberofSeats, userName) == true)
+                if (cd.addToCarrierTable(flight) == true)
                 {
                     MessageBox.Show("Flight Added successfully");
 
