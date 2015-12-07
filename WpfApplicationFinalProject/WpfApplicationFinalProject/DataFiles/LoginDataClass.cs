@@ -39,6 +39,7 @@ namespace WpfApplicationFinalProject
                     person.username = reader.GetString(0).Trim();
                     person.password = reader.GetString(1).Trim();
                     person.Role = reader.GetString(2).Trim();
+                    person.name = reader.GetString(3).Trim();
                     return person;
                 }
             }

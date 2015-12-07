@@ -20,11 +20,11 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class CarrierHomePageWindow : Window
     {
-        Person p;
-        public CarrierHomePageWindow(Person p)
+        FlightCarrier fc;
+        public CarrierHomePageWindow(FlightCarrier fc)
         {
             InitializeComponent();
-            this.p = p;
+            this.fc = fc;
         }
 
         private void btnViewFlightBookins_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace WpfApplicationFinalProject
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            AddFlightWindow addflight = new AddFlightWindow(p);
+            AddFlightWindow addflight = new AddFlightWindow(fc);
             addflight.Show();
         }
 

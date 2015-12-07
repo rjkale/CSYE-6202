@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class FlightCarrier :Person
+    public class FlightCarrier :User
     {
-        FlightCarrier flightcarrier;
+        
         public string CompanyName { set; get; }
-        public FlightCarrier flightCarrier { set; get; }
+        
 
     }
 }

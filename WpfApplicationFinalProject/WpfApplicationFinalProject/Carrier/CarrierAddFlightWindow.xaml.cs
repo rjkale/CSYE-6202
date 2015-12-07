@@ -22,22 +22,22 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class AddFlightWindow : Window
     {
-        Person p;
+        FlightCarrier fc;
         String Datee;
-        public AddFlightWindow(Person p)
+        public AddFlightWindow(FlightCarrier fc)
         {
             InitializeComponent();
             populateCitiesCombobox();
             populateClassCombobox();
             populateSeatsCombobox();
             populateHoursCombobox();
-            this.p = p;
+            this.fc = fc;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            CarrierHomePageWindow car = new CarrierHomePageWindow(p);
+            CarrierHomePageWindow car = new CarrierHomePageWindow(fc);
             car.Show();
         }
 
@@ -111,7 +111,7 @@ namespace WpfApplicationFinalProject
             string fare = txtFare.Text;
             string ClassType = coBoxClass.SelectedValue.ToString();
             string NumberofSeats = coBoxSeats.SelectedValue.ToString();
-            string userName = p.username.ToString();
+            string userName = fc.CompanyName.ToString();
             string economyPlusPrice = flight.geteconomyPlusPrice(fare);
             string BusinessPrice = flight.getBusinessPrice(fare);
 

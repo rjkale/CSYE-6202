@@ -8,6 +8,7 @@ namespace WpfApplicationFinalProject.Class
 {
     class Flight
     {
+        FlightCarrier fc { set; get; }
         public string flightName { set; get; }
         public string flightnumber { set; get; }
         public string sourceCity { set; get; }
