@@ -134,7 +134,7 @@ namespace WpfApplicationFinalProject
             string flightnumber = txtBoxFlightNumber.Text;
             string sourceCity = coBoxSourceCity.SelectedValue.ToString();
             string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
-            string date = DatePicker.SelectedDate.Value.Date.ToString();
+            string date = DatePicker.SelectedDate.Value.ToShortDateString();
             string duration = coBoxDuration.SelectedValue.ToString();
             string EconomyPrice = txtFare.Text;
             string economyPlusPrice = flight.geteconomyPlusPrice(EconomyPrice);
