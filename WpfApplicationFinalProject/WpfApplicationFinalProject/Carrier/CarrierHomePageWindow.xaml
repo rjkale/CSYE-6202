@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Carrier HomePage" Height="352.128" Width="585.106">
+        Title="Carrier HomePage" Height="437.038" Width="935.986">
     <Grid>
-        <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="179,18,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
-        <Button x:Name="btnViewFlightBookins" Content="View Fligh Bookings" HorizontalAlignment="Left" Margin="188,77,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnViewFlightBookins_Click"/>
-        <Button x:Name="btnAddFlight" Content="Add Flights" HorizontalAlignment="Left" Margin="187,141,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnAddFlight_Click"/>
-        <Button x:Name="btnUpdateFlight" Content="Update Flight Details" HorizontalAlignment="Left" Margin="187,203,0,0" VerticalAlignment="Top" Width="143" Height="38"/>
-        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="404,280,0,0" VerticalAlignment="Top" Width="75" Click="btnLogOut_Click"/>
+        <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="385,20,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
+        <Button x:Name="btnViewFlightBookins" Content="View Fligh Bookings" HorizontalAlignment="Left" Margin="228,75,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnViewFlightBookins_Click"/>
+        <Button x:Name="btnAddFlight" Content="Add Flights" HorizontalAlignment="Left" Margin="407,75,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnAddFlight_Click"/>
+        <Button x:Name="btnUpdateFlight" Content="Update Flight Details" HorizontalAlignment="Left" Margin="586,75,0,0" VerticalAlignment="Top" Width="143" Height="38"/>
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="440,333,0,0" VerticalAlignment="Top" Width="75" Click="btnLogOut_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="67,137,0,0" VerticalAlignment="Top" Height="168" Width="805"/>
 
     </Grid>
 </Window>

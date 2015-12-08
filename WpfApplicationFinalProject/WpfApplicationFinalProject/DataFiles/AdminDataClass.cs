@@ -59,30 +59,14 @@ namespace WpfApplicationFinalProject.DataFiles
                             fc.CompanyName = reader.GetString(1).Trim();
                             fc.username = reader.GetString(0).Trim();
                             fclist.Add(fc);
-                            return fclist;
-                        
-                        /*
-                        FlightCarrier fc = new FlightCarrier();
-                        fc.Name = "KingFisher";
-                        fc.userName = "king123";
-                        fclist.Add(fc);
-
-                        FlightCarrier fc1 = new FlightCarrier();
-                        fc1.Name = "KingFisher123";
-                        fc1.userName = "kin000";
-                        fclist.Add(fc1);
-
-                        return fclist;
-
-                        */
-                    }
+                        }
+                return fclist;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("AdminDataClassExcepetion",ex);
                 return null;
             }
-            return fclist;
         }
         
         

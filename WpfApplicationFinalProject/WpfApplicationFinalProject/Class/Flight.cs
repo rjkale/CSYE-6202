@@ -9,19 +9,20 @@ namespace WpfApplicationFinalProject.Class
     class Flight
     {
         FlightCarrier fc { set; get; }
+        public string userName { set; get; }
         public string flightName { set; get; }
         public string flightnumber { set; get; }
         public string sourceCity { set; get; }
         public string destinationCity { set; get; }
         public string date { set; get; }
         public string duration { set; get; }
-        public string fare { set; get; }
-        public string ClassType { set; get; }
-        public string NumberofSeats { set; get; }
-        public string userName { set; get; }
-        //public string economyPrice { set; get; }
+        public string EconomyPrice { set; get; }
         public string businessPrice { set; get; }
         public string economyPlusPrice { set; get; }
+        public string EconomySeats { set; get; }
+        public string EconomyPlusSeats { set; get; }
+        public string BusinessSeats { set; get; }
+        
 
         public String getBusinessPrice(String economy)
         {

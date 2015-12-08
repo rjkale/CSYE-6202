@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApplicationFinalProject.Class;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject
 {
@@ -25,6 +26,7 @@ namespace WpfApplicationFinalProject
         {
             InitializeComponent();
             this.fc = fc;
+            loadDataGridview();
         }
 
         private void btnViewFlightBookins_Click(object sender, RoutedEventArgs e)
@@ -44,6 +46,13 @@ namespace WpfApplicationFinalProject
             this.Close();
             MainWindow mw = new MainWindow();
             mw.Show();
+        }
+
+        private  void loadDataGridview()
+        {
+            
+            CarrierDataClass cdata = new CarrierDataClass();
+            dataGrid.ItemsSource = cdata.loadDataGridView(fc);
         }
     }
 }

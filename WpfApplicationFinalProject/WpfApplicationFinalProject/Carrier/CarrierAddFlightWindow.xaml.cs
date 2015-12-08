@@ -28,8 +28,10 @@ namespace WpfApplicationFinalProject
         {
             InitializeComponent();
             populateCitiesCombobox();
-            populateClassCombobox();
-            populateSeatsCombobox();
+            populateEconomySeatsCombobox();
+            populateEconomyPlusSeatsCombobox();
+            populateBusinessSeatsCombobox();
+            
             populateHoursCombobox();
             this.fc = fc;
         }
@@ -55,6 +57,7 @@ namespace WpfApplicationFinalProject
             coBoxDestinationCity.SelectedIndex = 2;
         }
 
+        /*
         private void populateClassCombobox()
         {
             string[] str = new string[] { "Economy", "Economy PLus", "Business"};
@@ -65,6 +68,7 @@ namespace WpfApplicationFinalProject
             }
             coBoxClass.SelectedIndex = 1;
         }
+        */
 
         private void textBox_Copy5_KeyDown(object sender, KeyEventArgs e)
         {
@@ -74,15 +78,38 @@ namespace WpfApplicationFinalProject
             }
         }
 
-        private void populateSeatsCombobox()
+        private void populateEconomySeatsCombobox()
         {
           
             for (int i = 0; i < 150; i++)
             {
-                coBoxSeats.Items.Add(i);
+                coBoxSeatsEconomy.Items.Add(i);
             }
 
-            coBoxSeats.SelectedIndex = 1;
+            coBoxSeatsEconomy.SelectedIndex = 1;
+        }
+
+
+        private void populateBusinessSeatsCombobox()
+        {
+
+            for (int i = 0; i < 10; i++)
+            {
+                coBoxSeatsBusinessClass.Items.Add(i);
+            }
+
+            coBoxSeatsBusinessClass.SelectedIndex = 1;
+        }
+
+        private void populateEconomyPlusSeatsCombobox()
+        {
+
+            for (int i = 0; i < 50; i++)
+            {
+                coBoxSeatsEconomyPlus.Items.Add(i);
+            }
+
+            coBoxSeatsBusinessClass.SelectedIndex = 1;
         }
 
 
@@ -102,34 +129,36 @@ namespace WpfApplicationFinalProject
 
             Flight flight = new Flight();
 
+            string userName = fc.username.ToString();
             string flightName = txtBoxFlightName.Text;
             string flightnumber = txtBoxFlightNumber.Text;
             string sourceCity = coBoxSourceCity.SelectedValue.ToString();
             string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
             string date = DatePicker.SelectedDateProperty.ToString();
             string duration = coBoxDuration.SelectedValue.ToString();
-            string fare = txtFare.Text;
-            string ClassType = coBoxClass.SelectedValue.ToString();
-            string NumberofSeats = coBoxSeats.SelectedValue.ToString();
-            string userName = fc.CompanyName.ToString();
-            string economyPlusPrice = flight.geteconomyPlusPrice(fare);
-            string BusinessPrice = flight.getBusinessPrice(fare);
+            string EconomyPrice = txtFare.Text;
+            string economyPlusPrice = flight.geteconomyPlusPrice(EconomyPrice);
+            string BusinessPrice = flight.getBusinessPrice(EconomyPrice);
+            string EconomySeats = coBoxSeatsEconomy.SelectedValue.ToString();
+            string EconomyPlusSeats = coBoxSeatsEconomyPlus.SelectedValue.ToString();
+            string BusinessSeats = coBoxSeatsBusinessClass.SelectedValue.ToString();
 
 
 
+
+            flight.userName = userName;
             flight.flightName = flightName;
             flight.flightnumber = flightnumber;
             flight.sourceCity = sourceCity;
             flight.destinationCity = destinationCity;
             flight.date = "datesde";
             flight.duration = duration;
-            flight.fare = fare;
-            flight.ClassType = ClassType;
-            flight.NumberofSeats = NumberofSeats;
-            flight.userName = userName;
+            flight.EconomyPrice = EconomyPrice;            
             flight.economyPlusPrice = economyPlusPrice;
             flight.businessPrice = BusinessPrice;
-
+            flight.EconomySeats = EconomySeats;
+            flight.EconomyPlusSeats = EconomyPlusSeats;
+            flight.BusinessSeats = BusinessSeats;
             
 
             if (checkforEmpty() == true)
@@ -142,7 +171,7 @@ namespace WpfApplicationFinalProject
                 else
                 {
                     MessageBox.Show("Unable to enter the Flight details");
-                    MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity +" date "+ date + " duration " + duration+ " fare " + fare  + " ClassType " + ClassType+ " NumberofSeats " + NumberofSeats + " userName " + userName);
+                    MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity +" date "+ date + " duration " + duration+ "userName "+ userName);
                 }
             }
 
