@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class Flight
+   public class Flight
     {
         FlightCarrier fc { set; get; }
         public string userName { set; get; }

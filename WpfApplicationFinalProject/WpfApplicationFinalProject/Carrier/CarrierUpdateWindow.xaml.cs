@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,26 +14,42 @@ using System.Windows.Shapes;
 using WpfApplicationFinalProject.Class;
 using WpfApplicationFinalProject.DataFiles;
 
-namespace WpfApplicationFinalProject
+namespace WpfApplicationFinalProject.Carrier
 {
     /// <summary>
-    /// Interaction logic for AddFlightWindow.xaml
+    /// Interaction logic for CarrierUpdateWindow.xaml
     /// </summary>
-    public partial class AddFlightWindow : Window
+    public partial class CarrierUpdateWindow : Window
     {
+        Flight flight = new Flight();
         FlightCarrier fc;
-        String Datee;
-        public AddFlightWindow(FlightCarrier fc)
+        public CarrierUpdateWindow(FlightCarrier fc, Flight flight)
         {
             InitializeComponent();
+            this.flight = flight;
+            this.fc = fc;
             populateCitiesCombobox();
             populateEconomySeatsCombobox();
             populateEconomyPlusSeatsCombobox();
             populateBusinessSeatsCombobox();
-            
             populateHoursCombobox();
-            this.fc = fc;
+            populateValues();
         }
+
+        private void populateValues()
+        {
+            txtBoxFlightName.Text = flight.flightName;
+            txtBoxFlightNumber.Text = flight.flightnumber;
+            coBoxSourceCity.SelectedValue = flight.sourceCity;
+            coBoxDestinationCity.SelectedValue = flight.destinationCity;
+            DatePicker.SelectedDate = DateTime.Parse(flight.date);
+            coBoxDuration.SelectedIndex = Convert.ToInt32(flight.duration);
+            txtFare.Text = flight.EconomyPrice;
+            coBoxSeatsEconomy.SelectedIndex = Convert.ToInt32(flight.EconomySeats);
+            coBoxSeatsEconomyPlus.SelectedIndex = Convert.ToInt32(flight.EconomyPlusSeats);
+            coBoxSeatsBusinessClass.SelectedIndex = Convert.ToInt32(flight.BusinessSeats);
+        }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -43,44 +58,9 @@ namespace WpfApplicationFinalProject
             car.Show();
         }
 
-        private  void populateCitiesCombobox()
-        {
-            string[] str = new string[] { "NY", "Boston", "Chicago", "Rhode Island", "Houston", "Austin", "Seattle", "San Fransisco", "Washinton DC", "Los Angeles" , "Philadelphia", "Portland", "Atlanta" };
-
-            foreach (var item in str)
-            {
-                coBoxSourceCity.Items.Add(item);
-                coBoxDestinationCity.Items.Add(item);
-                
-            }
-            coBoxSourceCity.SelectedIndex = 2;
-            coBoxDestinationCity.SelectedIndex = 2;
-        }
-
-        /*
-        private void populateClassCombobox()
-        {
-            string[] str = new string[] { "Economy", "Economy PLus", "Business"};
-
-            foreach (var item in str)
-            {
-                coBoxClass.Items.Add(item);
-            }
-            coBoxClass.SelectedIndex = 1;
-        }
-        */
-
-        private void textBox_Copy5_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key < Key.D0 || e.Key > Key.D9)
-            {
-                e.Handled = true;
-            }
-        }
-
         private void populateEconomySeatsCombobox()
         {
-          
+
             for (int i = 0; i < 150; i++)
             {
                 coBoxSeatsEconomy.Items.Add(i);
@@ -124,9 +104,45 @@ namespace WpfApplicationFinalProject
             coBoxDuration.SelectedIndex = 1;
         }
 
+        private void populateCitiesCombobox()
+        {
+            string[] str = new string[] { "NY", "Boston", "Chicago", "Rhode Island", "Houston", "Austin", "Seattle", "San Fransisco", "Washinton DC", "Los Angeles", "Philadelphia", "Portland", "Atlanta" };
+
+            foreach (var item in str)
+            {
+                coBoxSourceCity.Items.Add(item);
+                coBoxDestinationCity.Items.Add(item);
+
+            }
+            coBoxSourceCity.SelectedIndex = 2;
+            coBoxDestinationCity.SelectedIndex = 2;
+
+        }
+
+        private void txtFare_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key < Key.D0 || e.Key > Key.D9)
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private Boolean checkforEmpty()
+        {
+            if (txtBoxFlightName.Text == "")
+            { return false; }
+            else if (txtBoxFlightNumber.Text == "")
+            { return false; }
+            else if (txtFare.Text == "")
+            { return false; }
+            else
+                return true;
+        }
+
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
-
+            
             Flight flight = new Flight();
 
             string userName = fc.username.ToString();
@@ -143,9 +159,6 @@ namespace WpfApplicationFinalProject
             string EconomyPlusSeats = coBoxSeatsEconomyPlus.SelectedValue.ToString();
             string BusinessSeats = coBoxSeatsBusinessClass.SelectedValue.ToString();
 
-
-
-
             flight.userName = userName;
             flight.flightName = flightName;
             flight.flightnumber = flightnumber;
@@ -153,25 +166,25 @@ namespace WpfApplicationFinalProject
             flight.destinationCity = destinationCity;
             flight.date = date;
             flight.duration = duration;
-            flight.EconomyPrice = EconomyPrice;            
+            flight.EconomyPrice = EconomyPrice;
             flight.economyPlusPrice = economyPlusPrice;
             flight.businessPrice = BusinessPrice;
             flight.EconomySeats = EconomySeats;
             flight.EconomyPlusSeats = EconomyPlusSeats;
             flight.BusinessSeats = BusinessSeats;
+
             
 
             if (checkforEmpty() == true)
             {
                 CarrierDataClass cd = new CarrierDataClass();
-                if (cd.addToCarrierTable(flight) == true)
+                if (cd.updateCarrierTable(flight) == true)
                 {
-                    MessageBox.Show("Flight Added successfully");
+                    MessageBox.Show("Flight Updated successfully");
                 }
                 else
                 {
-                    MessageBox.Show("Unable to enter the Flight details");
-                    MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity +" date "+ date + " duration " + duration+ "userName "+ userName);
+                    MessageBox.Show("Unable to Update the Flight details");
                 }
             }
 
@@ -180,22 +193,5 @@ namespace WpfApplicationFinalProject
                 MessageBox.Show("Please fill all values");
             }
         }
-
-        private Boolean checkforEmpty()
-        {
-            if (txtBoxFlightName.Text == "")
-            { return false; }
-            else if (txtBoxFlightNumber.Text == "")
-            { return false; }
-            else if (txtFare.Text == "")
-            { return false; }
-            else
-                return true;
-        }
-
-        private void DateT_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
     }
- }
+}

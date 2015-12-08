@@ -10,7 +10,7 @@
 
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="288,512,0,0" VerticalAlignment="Top" Width="118" Height="34" Click="btnBack_Click"/>
         <Button x:Name="btnAddFlight" Content="Add A Flight" HorizontalAlignment="Left" Margin="538,512,0,0" VerticalAlignment="Top" Width="120" Height="34" Click="btnAddFlight_Click"/>
-        <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="250,36,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
+        <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="372,30,0,0" VerticalAlignment="Top" Height="38" Width="172" FontSize="15"/>
         <Label x:Name="label1" Content="Flight Name" HorizontalAlignment="Left" Margin="58,97,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
         <TextBox x:Name="txtBoxFlightName" HorizontalAlignment="Left" Height="37" Margin="235,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10"/>
         <Label x:Name="label1_Copy" Content="Flight Number" HorizontalAlignment="Left" Margin="450,97,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>

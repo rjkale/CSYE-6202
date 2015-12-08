@@ -58,6 +58,9 @@
     <Compile Include="Admin\AddAirlineCarrierWindow.xaml.cs">
       <DependentUpon>AddAirlineCarrierWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminViewAirlinesByCarrierWindow.xaml.cs">
+      <DependentUpon>AdminViewAirlinesByCarrierWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Carrier\CarrierAddFlightWindow.xaml.cs">
       <DependentUpon>CarrierAddFlightWindow.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,12 @@
     </Compile>
     <Compile Include="Carrier\CarrierHomePageWindow.xaml.cs">
       <DependentUpon>CarrierHomePageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier\CarrierUpdateWindow.xaml.cs">
+      <DependentUpon>CarrierUpdateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier\CarrierViewFlightBookingsWindow.xaml.cs">
+      <DependentUpon>CarrierViewFlightBookingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Flight.cs" />
     <Compile Include="Class\FlightCarrier.cs" />
@@ -92,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Admin\AdminViewAirlinesByCarrierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Carrier\CarrierAddFlightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +114,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Carrier\CarrierHomePageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Carrier\CarrierUpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Carrier\CarrierViewFlightBookingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,37 +22,45 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class ViewAirlineCarrierWindow : Window
     {
-        Person p;
-        public ViewAirlineCarrierWindow(Person p)
+        Person p = new Person();
+        FlightCarrier fc1;
+        string UserName1;
+        string userId1;
+
+        public ViewAirlineCarrierWindow(FlightCarrier fc)
         {
             InitializeComponent();
-            LoadDataGridview();
-            this.p = p;
+            //LoadDataGridview();
+            this.fc1 = fc;
+            p.username = fc1.username;
+            txtBoxUsername.Text = fc.username;
+            txtBoxCompanyName.Text = fc.CompanyName;
         }
 
-        private void LoadDataGridview()
-        {
-            AdminDataClass admin = new AdminDataClass();
-            //DataTable dt = admin.loadDataGridView1();
-            //dataGrid.ItemsSource = dt.DefaultView;
+        //private void LoadDataGridview()
+        //{
+        //    AdminDataClass admin = new AdminDataClass();
+        //    //DataTable dt = admin.loadDataGridView1();
+        //    //dataGrid.ItemsSource = dt.DefaultView;
 
-            dataGrid.ItemsSource =  admin.loadDataGridView();
+        //    dataGrid.ItemsSource =  admin.loadDataGridView();
 
-            /*
-            List<FlightCarrier> Fc =  admin.loadDataGridView();
-            if (Fc != null)
-            { 
-                foreach (var item in Fc)
-                {
-                    dataGrid.ItemsSource = item.Name;
-                }
-            }
-            else
-            {
-                MessageBox.Show("List is returning null"+Fc);
-            } 
-            */
-        }
+        //    /*
+        //    List<FlightCarrier> Fc =  admin.loadDataGridView();
+        //    if (Fc != null)
+        //    { 
+        //        foreach (var item in Fc)
+        //        {
+        //            dataGrid.ItemsSource = item.Name;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("List is returning null"+Fc);
+        //    } 
+        //    */
+        //}
+
 
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -62,23 +70,24 @@ namespace WpfApplicationFinalProject
             admin.Show();
         }
 
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
+
+        //private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        //{
 
 
-            /*
-            if (dataGrid.SelectedItems.Count > 0)
-            {
-                var UserName = ((DataRowView)dataGrid.SelectedItem).Row["userName"].ToString();
-                var UserId =   ((DataRowView)dataGrid.SelectedItem).Row["Name"].ToString();
-                MessageBox.Show("UserName = "+UserName + "UserId " +UserId);
-            }
-            */
+        //    /*
+        //    if (dataGrid.SelectedItems.Count > 0)
+        //    {
+        //        var UserName = ((DataRowView)dataGrid.SelectedItem).Row["userName"].ToString();
+        //        var UserId =   ((DataRowView)dataGrid.SelectedItem).Row["Name"].ToString();
+        //        MessageBox.Show("UserName = "+UserName + "UserId " +UserId);
+        //    }
+        //    */
                         
-            FlightCarrier fc = (FlightCarrier)dataGrid.SelectedValue;
-            var UserName1 = fc.CompanyName.ToString();
-            var userId1 = fc.username.ToString();
-            MessageBox.Show("UserName "+UserName1 + " UserID " +userId1);
-        }
+        //    FlightCarrier fc = (FlightCarrier)dataGrid.SelectedValue;
+        //    UserName1 = fc.CompanyName.ToString();
+        //    userId1 = fc.username.ToString();
+        //    //MessageBox.Show("UserName "+UserName1 + " UserID " +userId1);
+        //}
     }
 }

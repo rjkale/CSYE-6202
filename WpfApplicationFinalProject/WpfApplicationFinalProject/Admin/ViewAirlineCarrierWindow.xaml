@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="View Airline Carriers" Height="488.51" Width="589.362">
     <Grid>
-        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="212,384,0,0" VerticalAlignment="Top" Width="130" Height="38" Click="btnBack_Click"/>
-        <Label x:Name="label" Content="View Airline Companies" HorizontalAlignment="Left" Margin="195,34,0,0" VerticalAlignment="Top" Height="33" Width="147"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="170,114,0,0" VerticalAlignment="Top" Height="182" Width="214" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="242,352,0,0" VerticalAlignment="Top" Width="130" Height="38" Click="btnBack_Click"/>
+        <Label x:Name="label" Content="View Airline Companies" HorizontalAlignment="Left" Margin="183,55,0,0" VerticalAlignment="Top" Height="33" Width="147"/>
+        <Label x:Name="label1" Content="User name" HorizontalAlignment="Left" Margin="112,178,0,0" VerticalAlignment="Top" Height="32" Width="82"/>
+        <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Left" Height="32" Margin="238,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" IsEnabled="False"/>
+        <Label x:Name="label1_Copy1" Content="Company Name" HorizontalAlignment="Left" Margin="112,240,0,0" VerticalAlignment="Top" Height="32" Width="102"/>
+        <TextBox x:Name="txtBoxCompanyName" HorizontalAlignment="Left" Height="32" Margin="238,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" IsEnabled="False"/>
 
     </Grid>
 </Window>
