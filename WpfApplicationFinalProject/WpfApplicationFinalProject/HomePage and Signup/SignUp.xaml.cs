@@ -27,6 +27,7 @@ namespace WpfApplicationFinalProject
         {
             InitializeComponent();
             populateVales();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
         }
 

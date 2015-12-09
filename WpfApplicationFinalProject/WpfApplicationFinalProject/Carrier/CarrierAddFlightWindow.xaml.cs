@@ -23,7 +23,7 @@ namespace WpfApplicationFinalProject
     public partial class AddFlightWindow : Window
     {
         FlightCarrier fc;
-        String Datee;
+
         public AddFlightWindow(FlightCarrier fc)
         {
             InitializeComponent();
@@ -31,9 +31,11 @@ namespace WpfApplicationFinalProject
             populateEconomySeatsCombobox();
             populateEconomyPlusSeatsCombobox();
             populateBusinessSeatsCombobox();
+            txtBoxFlightName.Text = fc.CompanyName;
             
             populateHoursCombobox();
             this.fc = fc;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -126,12 +128,14 @@ namespace WpfApplicationFinalProject
 
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
+            if (checkforEmpty() == true)
+            {
 
-            Flight flight = new Flight();
+                Flight flight = new Flight();
 
             string userName = fc.username.ToString();
             string flightName = txtBoxFlightName.Text;
-            string flightnumber = txtBoxFlightNumber.Text;
+            string flightnumber = userName+txtBoxFlightNumber.Text;
             string sourceCity = coBoxSourceCity.SelectedValue.ToString();
             string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
             string date = DatePicker.SelectedDate.Value.ToShortDateString();
@@ -161,8 +165,7 @@ namespace WpfApplicationFinalProject
             flight.BusinessSeats = BusinessSeats;
             
 
-            if (checkforEmpty() == true)
-            {
+            
                 CarrierDataClass cd = new CarrierDataClass();
                 if (cd.addToCarrierTable(flight) == true)
                 {
@@ -189,8 +192,10 @@ namespace WpfApplicationFinalProject
             { return false; }
             else if (txtFare.Text == "")
             { return false; }
+            else if(DatePicker.Text == "")
+            {return false;}
             else
-                return true;
+            return true;
         }
 
         private void DateT_MouseDoubleClick(object sender, MouseButtonEventArgs e)

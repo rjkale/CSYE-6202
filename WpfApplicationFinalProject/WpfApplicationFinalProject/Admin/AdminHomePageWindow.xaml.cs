@@ -32,6 +32,7 @@ namespace WpfApplicationFinalProject
             InitializeComponent();
             LoadDataGridview();
             this.p = p;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -50,13 +51,18 @@ namespace WpfApplicationFinalProject
 
         private void button_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            FlightCarrier fc1 = new FlightCarrier();
-            fc1.username = UserName1;
-            fc1.CompanyName = userId1;
 
-            this.Close();
-            ViewAirlineCarrierWindow vair = new ViewAirlineCarrierWindow(fc1);
-            vair.Show();
+            if (dataGrid.SelectedItems.Count > 0)
+            {
+                FlightCarrier fc = (FlightCarrier)dataGrid.SelectedValue;
+                this.Close();
+                ViewAirlineCarrierWindow vair = new ViewAirlineCarrierWindow(fc);
+                vair.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a field");
+            }
         }
 
 
@@ -77,13 +83,19 @@ namespace WpfApplicationFinalProject
 
         {
 
-            FlightCarrier fc2 = new FlightCarrier();
-            fc2.username = userId1;
-            fc2.CompanyName = UserName1;
+            if (dataGrid.SelectedItems.Count > 0)
+            {
+                FlightCarrier fc = (FlightCarrier)dataGrid.SelectedValue;
+                this.Close();
+                AdminViewAirlinesByCarrierWindow car = new AdminViewAirlinesByCarrierWindow(fc);
+                car.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a field");
+            }
 
-            this.Close();
-            AdminViewAirlinesByCarrierWindow car = new AdminViewAirlinesByCarrierWindow(fc2);
-            car.Show();
+            
         }
     }
 }

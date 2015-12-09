@@ -28,6 +28,7 @@ namespace WpfApplicationFinalProject.Carrier
             this.flight = flight;
             this.fc = fc;
             populateValues();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void populateValues()

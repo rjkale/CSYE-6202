@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="CustomerHomePageWindow" Height="300" Width="300">
-    <Grid/>
+        Title="Customer HomePage " Height="330.451" Width="787.218">
+    <Grid>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="343,260,0,0" VerticalAlignment="Top" Width="85" Height="27" Click="btnLogout_Click"/>
+        <Label x:Name="label" Content="Customer Home Page" HorizontalAlignment="Left" Margin="271,19,0,0" VerticalAlignment="Top" Height="41" Width="202" FontSize="18"/>
+    </Grid>
 </Window>

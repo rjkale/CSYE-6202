@@ -34,6 +34,7 @@ namespace WpfApplicationFinalProject.Carrier
             populateBusinessSeatsCombobox();
             populateHoursCombobox();
             populateValues();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void populateValues()

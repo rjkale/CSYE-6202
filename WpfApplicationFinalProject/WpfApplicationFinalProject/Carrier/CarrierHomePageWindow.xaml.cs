@@ -28,6 +28,7 @@ namespace WpfApplicationFinalProject
             InitializeComponent();
             this.fc = fc;
             loadDataGridview();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnViewFlightBookins_Click(object sender, RoutedEventArgs e)

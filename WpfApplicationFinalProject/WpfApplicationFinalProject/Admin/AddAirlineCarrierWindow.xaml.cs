@@ -27,6 +27,7 @@ namespace WpfApplicationFinalProject
         {
             InitializeComponent();
             this.p = p;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnAddCarrier_Click(object sender, RoutedEventArgs e)

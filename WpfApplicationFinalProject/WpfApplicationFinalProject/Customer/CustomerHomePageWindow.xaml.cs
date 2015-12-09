@@ -20,5 +20,12 @@ namespace WpfApplicationFinalProject
 
          
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow main = new MainWindow();
+            main.Show();
+        }
     }
 }

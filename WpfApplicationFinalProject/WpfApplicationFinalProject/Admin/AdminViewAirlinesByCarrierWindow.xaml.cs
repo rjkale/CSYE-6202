@@ -29,6 +29,7 @@ namespace WpfApplicationFinalProject.Admin
             this.fc = fc;
             p.username = fc.username;
             populateDataGrid();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

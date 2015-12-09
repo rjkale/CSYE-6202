@@ -35,6 +35,7 @@ namespace WpfApplicationFinalProject
             p.username = fc1.username;
             txtBoxUsername.Text = fc.username;
             txtBoxCompanyName.Text = fc.CompanyName;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         //private void LoadDataGridview()
