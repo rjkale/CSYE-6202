@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="SignUp" Height="634.166" Width="540.334">
+        Title="SignUp" Height="634.166" Width="540.334"
+        WindowStyle="None">
     <Grid>
         <Label x:Name="label" Content="Sign Up" HorizontalAlignment="Left" Margin="207,30,0,0" VerticalAlignment="Top" Height="47" Width="104" FontSize="24"/>
         <Label x:Name="label1" Content="User name" HorizontalAlignment="Left" Margin="92,112,0,0" VerticalAlignment="Top" Height="32" Width="83"/>

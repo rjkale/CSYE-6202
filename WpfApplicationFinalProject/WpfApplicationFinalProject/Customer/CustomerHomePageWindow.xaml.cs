@@ -15,10 +15,11 @@ namespace WpfApplicationFinalProject
     /// </summary>
     public partial class CustomerHomePageWindow : Window
     {
-        
-        public CustomerHomePageWindow()
+        Person person;
+        public CustomerHomePageWindow(Person cust)
         {
             InitializeComponent();
+            this.person = cust;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             populateCombobox();
             DatePicker.SelectedDate = new DateTime(2015, 12, 11);
@@ -26,12 +27,7 @@ namespace WpfApplicationFinalProject
             
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            MainWindow main = new MainWindow();
-            main.Show();
-        }
+       
 
         private void populateCombobox()
         {
@@ -103,6 +99,19 @@ namespace WpfApplicationFinalProject
             {
                 MessageBox.Show("Please select different Source and Destination cities \n OR \nSelect a date");
             }
+        }
+
+        private void btn_Myprofile_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerProfileWindow cp = new CustomerProfileWindow(person);
+            cp.Show();
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow m = new MainWindow();
+            m.Show();
         }
     }
 }

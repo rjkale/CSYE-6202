@@ -44,7 +44,7 @@ namespace WpfApplicationFinalProject.Carrier
             coBoxSourceCity.SelectedValue = flight.sourceCity;
             coBoxDestinationCity.SelectedValue = flight.destinationCity;
             DatePicker.SelectedDate = DateTime.Parse(flight.date);
-            coBoxDuration.SelectedIndex = Convert.ToInt32(flight.duration);
+            coBoxDuration.SelectedIndex.Equals(flight.duration);
             txtFare.Text = flight.EconomyPrice;
             coBoxSeatsEconomy.SelectedIndex = Convert.ToInt32(flight.EconomySeats);
             coBoxSeatsEconomyPlus.SelectedIndex = Convert.ToInt32(flight.EconomyPlusSeats);
@@ -99,7 +99,7 @@ namespace WpfApplicationFinalProject.Carrier
 
             for (int i = 0; i < 25; i++)
             {
-                coBoxDuration.Items.Add(i);
+                coBoxDuration.Items.Add(i + " hrs");
             }
 
             coBoxDuration.SelectedIndex = 1;

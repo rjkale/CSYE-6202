@@ -84,8 +84,14 @@
     <Compile Include="Customer\CustomerBookingPage.xaml.cs">
       <DependentUpon>CustomerBookingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerCheckOutWindow.xaml.cs">
+      <DependentUpon>CustomerCheckOutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHomePageWindow.xaml.cs">
       <DependentUpon>CustomerHomePageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerProfileWindow.xaml.cs">
+      <DependentUpon>CustomerProfileWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerSearchPageWindow.xaml.cs">
       <DependentUpon>CustomerSearchPageWindow.xaml</DependentUpon>
@@ -140,7 +146,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Customer\CustomerCheckOutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Customer\CustomerHomePageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\CustomerProfileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

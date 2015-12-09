@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Add Flight" Height="609.879" Width="879.831">
+        Title="Add Flight" Height="609.879" Width="879.831"
+        WindowStyle="None">
     <Grid>
 
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="288,512,0,0" VerticalAlignment="Top" Width="118" Height="34" Click="btnBack_Click"/>

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Carrier HomePage" Height="437.038" Width="935.986">
+        Title="Carrier HomePage" Height="437.038" Width="935.986"
+        WindowStyle="None">
     <Grid>
         <Label x:Name="label" Content="Carrier Home Page" HorizontalAlignment="Left" Margin="401,17,0,0" VerticalAlignment="Top" Height="38" Width="173" FontSize="15"/>
         <Button x:Name="btnViewFlightBookins" Content="View Fligh Bookings" HorizontalAlignment="Left" Margin="144,76,0,0" VerticalAlignment="Top" Width="143" Height="38" Click="btnViewFlightBookins_Click"/>

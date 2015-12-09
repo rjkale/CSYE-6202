@@ -120,7 +120,7 @@ namespace WpfApplicationFinalProject
 
             for (int i = 0; i < 25; i++)
             {
-                coBoxDuration.Items.Add(i);
+                coBoxDuration.Items.Add(i + " hrs");
             }
 
             coBoxDuration.SelectedIndex = 1;
@@ -128,60 +128,68 @@ namespace WpfApplicationFinalProject
 
         private void btnAddFlight_Click(object sender, RoutedEventArgs e)
         {
-            if (checkforEmpty() == true)
+            if (checkforCombobox())
             {
-
-                Flight flight = new Flight();
-
-            string userName = fc.username.ToString();
-            string flightName = txtBoxFlightName.Text;
-            string flightnumber = userName+txtBoxFlightNumber.Text;
-            string sourceCity = coBoxSourceCity.SelectedValue.ToString();
-            string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
-            string date = DatePicker.SelectedDate.Value.ToShortDateString();
-            string duration = coBoxDuration.SelectedValue.ToString();
-            string EconomyPrice = txtFare.Text;
-            string economyPlusPrice = flight.geteconomyPlusPrice(EconomyPrice);
-            string BusinessPrice = flight.getBusinessPrice(EconomyPrice);
-            string EconomySeats = coBoxSeatsEconomy.SelectedValue.ToString();
-            string EconomyPlusSeats = coBoxSeatsEconomyPlus.SelectedValue.ToString();
-            string BusinessSeats = coBoxSeatsBusinessClass.SelectedValue.ToString();
-
-
-
-
-            flight.userName = userName;
-            flight.flightName = flightName;
-            flight.flightnumber = flightnumber;
-            flight.sourceCity = sourceCity;
-            flight.destinationCity = destinationCity;
-            flight.date = date;
-            flight.duration = duration;
-            flight.EconomyPrice = EconomyPrice;            
-            flight.economyPlusPrice = economyPlusPrice;
-            flight.businessPrice = BusinessPrice;
-            flight.EconomySeats = EconomySeats;
-            flight.EconomyPlusSeats = EconomyPlusSeats;
-            flight.BusinessSeats = BusinessSeats;
-            
-
-            
-                CarrierDataClass cd = new CarrierDataClass();
-                if (cd.addToCarrierTable(flight) == true)
+                if (checkforEmpty() == true)
                 {
-                    MessageBox.Show("Flight Added successfully");
+
+                    Flight flight = new Flight();
+
+                    string userName = fc.username.ToString();
+                    string flightName = txtBoxFlightName.Text;
+                    string flightnumber = userName + txtBoxFlightNumber.Text;
+                    string sourceCity = coBoxSourceCity.SelectedValue.ToString();
+                    string destinationCity = coBoxDestinationCity.SelectedValue.ToString();
+                    string date = DatePicker.SelectedDate.Value.ToShortDateString();
+                    string duration = coBoxDuration.SelectedValue.ToString();
+                    string EconomyPrice = txtFare.Text;
+                    string economyPlusPrice = flight.geteconomyPlusPrice(EconomyPrice);
+                    string BusinessPrice = flight.getBusinessPrice(EconomyPrice);
+                    string EconomySeats = coBoxSeatsEconomy.SelectedValue.ToString();
+                    string EconomyPlusSeats = coBoxSeatsEconomyPlus.SelectedValue.ToString();
+                    string BusinessSeats = coBoxSeatsBusinessClass.SelectedValue.ToString();
+
+
+
+
+                    flight.userName = userName;
+                    flight.flightName = flightName;
+                    flight.flightnumber = flightnumber;
+                    flight.sourceCity = sourceCity;
+                    flight.destinationCity = destinationCity;
+                    flight.date = date;
+                    flight.duration = duration;
+                    flight.EconomyPrice = EconomyPrice;
+                    flight.economyPlusPrice = economyPlusPrice;
+                    flight.businessPrice = BusinessPrice;
+                    flight.EconomySeats = EconomySeats;
+                    flight.EconomyPlusSeats = EconomyPlusSeats;
+                    flight.BusinessSeats = BusinessSeats;
+
+
+
+                    CarrierDataClass cd = new CarrierDataClass();
+                    if (cd.addToCarrierTable(flight) == true)
+                    {
+                        MessageBox.Show("Flight Added successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to enter the Flight details");
+                        MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity + " date " + date + " duration " + duration + "userName " + userName);
+                    }
                 }
+
                 else
                 {
-                    MessageBox.Show("Unable to enter the Flight details");
-                    MessageBox.Show("flightName" + flightName + "\nflightnumber" + flightnumber + " sourceCity " + sourceCity + " destinationCity " + destinationCity +" date "+ date + " duration " + duration+ "userName "+ userName);
+                    MessageBox.Show("Please fill all values");
                 }
             }
-
             else
             {
-                MessageBox.Show("Please fill all values");
+                MessageBox.Show("Please enter valid values for Source and Destination cities");
             }
+            
         }
 
         private Boolean checkforEmpty()
@@ -195,6 +203,17 @@ namespace WpfApplicationFinalProject
             else if(DatePicker.Text == "")
             {return false;}
             else
+            return true;
+        }
+
+        private Boolean checkforCombobox()
+        {
+            string source = coBoxSourceCity.SelectedValue.ToString();
+            string destination = coBoxDestinationCity.SelectedValue.ToString();
+            if (source == destination)
+            {
+                return false;
+            }
             return true;
         }
 

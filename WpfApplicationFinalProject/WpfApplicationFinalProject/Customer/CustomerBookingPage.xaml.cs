@@ -21,10 +21,80 @@ namespace WpfApplicationFinalProject.Customer
     public partial class CustomerBookingPage : Window
     {
         Flight flight;
-        public CustomerBookingPage(Flight flight)
+        Search search;
+        public CustomerBookingPage(Flight flight, Search search)
         {
             InitializeComponent();
             this.flight = flight;
+            this.search = search;
+            populateValues();
+        }
+
+        private void populateValues()
+        {
+            txtBoxFlightName.Text = flight.flightName;
+            txtBoxFlightNumber.Text = flight.flightnumber;
+            txtBoxSourceCity.Text = flight.sourceCity;
+            txtBoxFDestinationCity.Text = flight.destinationCity;
+            txtBoxTravelDate.Text = flight.date;
+            txtBoxFlightDuration.Text = flight.duration;
+            txtBoxSeats.Text = search.seats;
+            txtBoxClass.Text = search.classType;
+            int price = checkClassTypePrice() * Convert.ToInt16(search.seats);
+            txtBoxFair.Text = Convert.ToString(price);
+            txtBoxTaxes.Text = calculateTax();
+            txtBoxTotalAmount.Text = totalFair();
+
+        }
+
+        private string totalFair()
+        {
+            double tax = Convert.ToDouble(calculateTax());
+            int fair = checkClassTypePrice() * Convert.ToInt16(search.seats);
+            double total = tax + Convert.ToDouble(fair);
+            return Convert.ToString(total);
+                
+        }
+
+        private string calculateTax()
+        {
+
+            int price = checkClassTypePrice() * Convert.ToInt16(search.seats);
+            double Tax = 0.2 * price;
+            return Convert.ToString(Tax);
+        }
+
+        private int checkClassTypePrice()
+        {
+            if (search.classType == "Economy")
+            {
+                return Convert.ToInt16(flight.economyPlusPrice);
+            }
+            else if (search.classType == "Economy Plus")
+            {
+                return Convert.ToInt16(flight.economyPlusPrice);
+            }
+            else if (search.classType == "Business")
+            {
+                return Convert.ToInt16(flight.businessPrice);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            CustomerSearchPageWindow cs = new CustomerSearchPageWindow(search);
+            cs.Show();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerCheckOutWindow check = new CustomerCheckOutWindow();
+            check.Show();
         }
     }
 }

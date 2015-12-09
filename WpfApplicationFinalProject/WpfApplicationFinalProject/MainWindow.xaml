@@ -16,7 +16,7 @@
             <ComboBox x:Name="coBoxDestinationCity" HorizontalAlignment="Left" Margin="234,280,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
             <Label x:Name="label1_Copy3" Content="Travel Date" HorizontalAlignment="Left" Margin="592,244,0,0" VerticalAlignment="Top" Width="108" Height="36" FontSize="18" FontWeight="Medium"/>
             <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="588,278,0,0" VerticalAlignment="Top" Height="24" Width="138" AllowDrop="True" DisplayDateEnd="2016-05-01" DisplayDateStart="2015-12-11" />
-            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="958,262,0,0" VerticalAlignment="Top" Width="84" Height="50" Click="btnSearch_Click"/>
+            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="958,256,0,0" VerticalAlignment="Top" Width="84" Height="50" Click="btnSearch_Click"/>
             <ComboBox x:Name="coboxClass" HorizontalAlignment="Left" Margin="422,278,0,0" VerticalAlignment="Top" Width="138" Height="28"/>
             <Label x:Name="label1_Copy" Content="          Class" HorizontalAlignment="Left" Margin="416,244,0,0" VerticalAlignment="Top" Width="130" Height="36" FontSize="18" RenderTransformOrigin="0.485,0.514" FontWeight="Medium"/>
             <ComboBox x:Name="coboxSeats" HorizontalAlignment="Left" Margin="760,276,0,0" VerticalAlignment="Top" Width="138" Height="28"/>

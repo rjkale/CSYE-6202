@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Admin Home Page" Height="423.188" Width="696.411">
+        Title="Admin Home Page" Height="423.188" Width="696.411"
+        WindowStyle="None">
     <Grid>
         <Label x:Name="label" Content="ADMINISTRATOR HOME PAGE" HorizontalAlignment="Left" Margin="244,33,0,0" VerticalAlignment="Top" Height="38" Width="204" FontSize="13.333"/>
         <Button x:Name="button_Copy" Content="Add Airline Carriers" HorizontalAlignment="Left" Margin="56,92,0,0" VerticalAlignment="Top" Width="164" Height="32" Click="button_Copy_Click"/>

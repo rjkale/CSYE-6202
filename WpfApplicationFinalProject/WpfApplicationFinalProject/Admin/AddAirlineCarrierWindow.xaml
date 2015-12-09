@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Add Airline Carrier " Height="423.735" Width="561.479">
+        Title="Add Airline Carrier " Height="423.735" Width="561.479"
+        WindowStyle="None">
     <Grid>
         <Label x:Name="label" Content="Add Airline Company " HorizontalAlignment="Left" Margin="195,34,0,0" VerticalAlignment="Top" Height="33" Width="132"/>
         <Label x:Name="label1" Content="User name" HorizontalAlignment="Left" Margin="112,105,0,0" VerticalAlignment="Top" Height="32" Width="83"/>

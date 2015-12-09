@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject.Customer"
         mc:Ignorable="d"
-        Title="Customer Booking" Height="300" Width="300">
+        Title="Customer Booking" Height="553.256" Width="796.751"
+        WindowStyle="None">
     <Grid>
-        
+        <Label x:Name="label1" Content="Flight Name" HorizontalAlignment="Left" Margin="45,62,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxFlightName" HorizontalAlignment="Left" Height="37" Margin="222,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy" Content="Flight Number" HorizontalAlignment="Left" Margin="404,63,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxFlightNumber" HorizontalAlignment="Left" Height="36" Margin="581,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy1" Content="Source City" HorizontalAlignment="Left" Margin="46,110,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy2" Content="Destination City" HorizontalAlignment="Left" Margin="407,113,0,0" VerticalAlignment="Top" Width="130" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy3" Content="Travel Date" HorizontalAlignment="Left" Margin="46,164,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy7" Content="Number of Seats Booked" HorizontalAlignment="Left" Margin="30,222,0,0" VerticalAlignment="Top" Width="177" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy8" Content="Flight Duration" HorizontalAlignment="Left" Margin="411,168,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxSourceCity" HorizontalAlignment="Left" Height="37" Margin="223,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxFDestinationCity" HorizontalAlignment="Left" Height="37" Margin="584,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxFlightDuration" HorizontalAlignment="Left" Height="37" Margin="584,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxSeats" HorizontalAlignment="Left" Height="37" Margin="225,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxClass" HorizontalAlignment="Left" Height="37" Margin="588,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxTravelDate" HorizontalAlignment="Left" Height="37" Margin="223,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy4" Content="Class" HorizontalAlignment="Left" Margin="411,220,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Button x:Name="button" Content="CheckOut" HorizontalAlignment="Left" Margin="589,454,0,0" VerticalAlignment="Top" Width="135" Height="41" Click="button_Click"/>
+        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="37,450,0,0" VerticalAlignment="Top" Width="134" Height="47" RenderTransformOrigin="0.479,0.373" Click="button1_Click"/>
+        <Label x:Name="label" Content="Flight Review" HorizontalAlignment="Left" Margin="310,11,0,0" VerticalAlignment="Top" Height="28" Width="200"/>
+        <Label x:Name="label1_Copy5" Content="Fair" HorizontalAlignment="Left" Margin="411,272,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxFair" HorizontalAlignment="Left" Height="37" Margin="588,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy6" Content="Tax &amp; Surchages" HorizontalAlignment="Left" Margin="413,325,0,0" VerticalAlignment="Top" Width="133" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxTaxes" HorizontalAlignment="Left" Height="37" Margin="590,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy9" Content="Total Amount" HorizontalAlignment="Left" Margin="413,380,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxTotalAmount" HorizontalAlignment="Left" Height="37" Margin="590,378,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
     </Grid>
 </Window>
