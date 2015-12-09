@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationFinalProject"
         mc:Ignorable="d"
-        Title="Customer HomePage " Height="330.451" Width="787.218">
-    <Grid>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="343,260,0,0" VerticalAlignment="Top" Width="85" Height="27" Click="btnLogout_Click"/>
-        <Label x:Name="label" Content="Customer Home Page" HorizontalAlignment="Left" Margin="271,19,0,0" VerticalAlignment="Top" Height="41" Width="202" FontSize="18"/>
+        Title="Customer HomePage " Height="632.707" Width="1067.482">
+    <Grid Margin="0,0,1,3">
+        <Grid Margin="0,136,19,-14">
+            <Grid Margin="2,-130,-17,10">
+                <Canvas>
+                    <Image x:Name="image" Source="/WpfApplicationFinalProject;component/Images/flight.jpg" IsEnabled="False" IsHitTestVisible="False" Height="597" Width="1054"/>
+                </Canvas>
+            </Grid>
+            <Label x:Name="label1_Copy1" Content="Source City" HorizontalAlignment="Left" Margin="31,135,0,0" VerticalAlignment="Top" Width="108" Height="36" FontSize="18" FontWeight="Medium"/>
+            <Label x:Name="label1_Copy2" Content="Destination City" HorizontalAlignment="Left" Margin="227,137,0,0" VerticalAlignment="Top" Width="144" Height="34" FontSize="18" RenderTransformOrigin="0.485,0.514" FontWeight="Medium"/>
+            <ComboBox x:Name="coBoxSourceCity" HorizontalAlignment="Left" Margin="23,169,0,0" VerticalAlignment="Top" Width="140" Height="26"/>
+            <ComboBox x:Name="coBoxDestinationCity" HorizontalAlignment="Left" Margin="233,171,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+            <Label x:Name="label1_Copy3" Content="Travel Date" HorizontalAlignment="Left" Margin="591,135,0,0" VerticalAlignment="Top" Width="108" Height="36" FontSize="18" FontWeight="Medium"/>
+            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="587,169,0,0" VerticalAlignment="Top" Height="24" Width="138" AllowDrop="True" DisplayDateEnd="2016-05-01" DisplayDateStart="2015-12-11" />
+            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="940,156,0,0" VerticalAlignment="Top" Width="84" Height="50" Click="btnSearch_Click"/>
+            <ComboBox x:Name="coboxClass" HorizontalAlignment="Left" Margin="421,169,0,0" VerticalAlignment="Top" Width="138" Height="28"/>
+            <Label x:Name="label1_Copy" Content="          Class" HorizontalAlignment="Left" Margin="415,135,0,0" VerticalAlignment="Top" Width="130" Height="36" FontSize="18" RenderTransformOrigin="0.485,0.514" FontWeight="Medium"/>
+            <ComboBox x:Name="coboxSeats" HorizontalAlignment="Left" Margin="759,167,0,0" VerticalAlignment="Top" Width="138" Height="28"/>
+            <Label x:Name="label1_Copy4" Content="          Seats" HorizontalAlignment="Left" Margin="753,135,0,0" VerticalAlignment="Top" Width="130" Height="34" FontSize="18" RenderTransformOrigin="0.485,0.514" FontWeight="Medium"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="78" Margin="-2,397,-17,0" VerticalAlignment="Top" Width="1058" Source="/WpfApplicationFinalProject;component/Images/footNote.PNG"/>
+
+        </Grid>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="39" Margin="6,5,0,0" VerticalAlignment="Top" Width="1052" Source="/WpfApplicationFinalProject;component/Images/TitleBar.PNG"/>
+        <Button x:Name="button" Content="Logout" HorizontalAlignment="Left" Margin="949,11,0,0" VerticalAlignment="Top" Width="81" Height="28" Click="button_Click"/>
     </Grid>
 </Window>

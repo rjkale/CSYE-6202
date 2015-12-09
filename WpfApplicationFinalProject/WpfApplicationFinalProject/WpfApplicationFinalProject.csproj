@@ -81,8 +81,14 @@
     <Compile Include="Class\Person.cs" />
     <Compile Include="Class\Search.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Customer\CustomerBookingPage.xaml.cs">
+      <DependentUpon>CustomerBookingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHomePageWindow.xaml.cs">
       <DependentUpon>CustomerHomePageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerSearchPageWindow.xaml.cs">
+      <DependentUpon>CustomerSearchPageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataFiles\AdminDataClass.cs" />
     <Compile Include="DataFiles\CarrierDataClass.cs" />
@@ -130,7 +136,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Customer\CustomerBookingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Customer\CustomerHomePageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\CustomerSearchPageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\footNote.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flight.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
