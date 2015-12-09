@@ -25,7 +25,6 @@ namespace WpfApplicationFinalProject.Customer
         {
             InitializeComponent();
             this.flight = flight;
-            MessageBox.Show(flight.flightName);
         }
     }
 }
