@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject.HomePage_and_Signup
 {
@@ -19,11 +21,32 @@ namespace WpfApplicationFinalProject.HomePage_and_Signup
     /// </summary>
     public partial class HomePageSearchResultsWindow : Window
     {
-        public HomePageSearchResultsWindow()
+        Search search;
+        public HomePageSearchResultsWindow(Search search)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.search = search;
+
+            loadDataGrid();
         }
+
+        private void show()
+        {
+            string source = search.sourceCity;
+            string destination = search.destinationCity;
+            string date = search.date;
+            string seats = search.seats;
+            MessageBox.Show(source + " " + destination + " " + date+ " " + seats);
+        }
+
+
+        private void loadDataGrid()
+        {
+            SearchDataClass s = new SearchDataClass();
+            dataGrid.ItemsSource = s.loadDataGridView(search);
+        }
+
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApplicationFinalProject.Class
 {
-    class Search
+    public class Search
     {
         public string sourceCity { set; get; }
         public string destinationCity { set; get; }

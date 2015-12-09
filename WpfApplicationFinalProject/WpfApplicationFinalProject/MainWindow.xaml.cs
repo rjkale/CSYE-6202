@@ -85,7 +85,7 @@ namespace WpfApplicationFinalProject
                 search.seats = coboxSeats.SelectedValue.ToString();
 
                 
-                HomePageSearchResultsWindow s = new HomePageSearchResultsWindow();
+                HomePageSearchResultsWindow s = new HomePageSearchResultsWindow(search);
                 s.Show(); 
                 
             }
