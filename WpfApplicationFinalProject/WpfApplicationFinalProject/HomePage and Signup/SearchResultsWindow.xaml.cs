@@ -29,6 +29,7 @@ namespace WpfApplicationFinalProject.HomePage_and_Signup
             this.search = search;
 
             loadDataGrid();
+            savSearchResults();
         }
 
         private void show()
@@ -47,6 +48,12 @@ namespace WpfApplicationFinalProject.HomePage_and_Signup
             dataGrid.ItemsSource = s.loadDataGridView(search);
         }
 
+
+        private void savSearchResults()
+        {
+            SearchDataClass s = new SearchDataClass();
+            s.saveSearchResults(search);
+        }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
