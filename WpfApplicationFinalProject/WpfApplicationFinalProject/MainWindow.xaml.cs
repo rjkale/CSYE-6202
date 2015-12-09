@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplicationFinalProject.Class;
+using WpfApplicationFinalProject.HomePage_and_Signup;
 
 namespace WpfApplicationFinalProject
 {
@@ -25,6 +27,7 @@ namespace WpfApplicationFinalProject
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             populateCombobox();
+            DatePicker.SelectedDate = new DateTime(2015, 12, 11);
         }
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
@@ -51,7 +54,7 @@ namespace WpfApplicationFinalProject
                 coBoxDestinationCity.Items.Add(item);
 
             }
-            coBoxSourceCity.SelectedIndex = 2;
+            coBoxSourceCity.SelectedIndex = 1;
             coBoxDestinationCity.SelectedIndex = 2;
 
 
@@ -74,7 +77,17 @@ namespace WpfApplicationFinalProject
         {
             if (checkforvalues() == true)
             {
+                Search search = new Search();
+                search.sourceCity = coBoxSourceCity.SelectedValue.ToString();
+                search.destinationCity = coBoxDestinationCity.SelectedValue.ToString();
+                search.classType = coboxClass.SelectedValue.ToString();
+                search.date = DatePicker.SelectedDate.Value.ToShortDateString();
+                search.seats = coboxSeats.SelectedValue.ToString();
 
+                
+                HomePageSearchResultsWindow s = new HomePageSearchResultsWindow();
+                s.Show(); 
+                
             }
             else
             {

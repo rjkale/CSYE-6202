@@ -79,6 +79,7 @@
     <Compile Include="Class\Flight.cs" />
     <Compile Include="Class\FlightCarrier.cs" />
     <Compile Include="Class\Person.cs" />
+    <Compile Include="Class\Search.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Customer\CustomerHomePageWindow.xaml.cs">
       <DependentUpon>CustomerHomePageWindow.xaml</DependentUpon>
@@ -87,7 +88,11 @@
     <Compile Include="DataFiles\CarrierDataClass.cs" />
     <Compile Include="DataFiles\DBconnection.cs" />
     <Compile Include="DataFiles\LoginDataClass.cs" />
+    <Compile Include="DataFiles\SearchDataClass.cs" />
     <Compile Include="DataFiles\SignUpDataClass.cs" />
+    <Compile Include="HomePage and Signup\SearchResultsWindow.xaml.cs">
+      <DependentUpon>SearchResultsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HomePage and Signup\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
@@ -126,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Customer\CustomerHomePageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage and Signup\SearchResultsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

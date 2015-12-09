@@ -1,0 +1,13 @@
+﻿<Window x:Class="WpfApplicationFinalProject.HomePage_and_Signup.HomePageSearchResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationFinalProject.HomePage_and_Signup"
+        mc:Ignorable="d"
+        Title="Search Results" Height="349.234" Width="621.767">
+    <Grid>
+        <Button x:Name="button" Content="Back" HorizontalAlignment="Left" Margin="50,243,0,0" VerticalAlignment="Top" Width="125" Height="40" Click="button_Click"/>
+
+    </Grid>
+</Window>
