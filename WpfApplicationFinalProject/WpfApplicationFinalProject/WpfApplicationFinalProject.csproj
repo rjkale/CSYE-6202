@@ -76,11 +76,16 @@
     <Compile Include="Carrier\CarrierViewFlightBookingsWindow.xaml.cs">
       <DependentUpon>CarrierViewFlightBookingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\Booking.cs" />
     <Compile Include="Class\Flight.cs" />
     <Compile Include="Class\FlightCarrier.cs" />
+    <Compile Include="Class\PaymentDetails.cs" />
     <Compile Include="Class\Person.cs" />
     <Compile Include="Class\Search.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Customer\CustomerBookingDetailsWindow.xaml.cs">
+      <DependentUpon>CustomerBookingDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerBookingPage.xaml.cs">
       <DependentUpon>CustomerBookingPage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +103,7 @@
     </Compile>
     <Compile Include="DataFiles\AdminDataClass.cs" />
     <Compile Include="DataFiles\CarrierDataClass.cs" />
+    <Compile Include="DataFiles\CustomerDataClass.cs" />
     <Compile Include="DataFiles\DBconnection.cs" />
     <Compile Include="DataFiles\LoginDataClass.cs" />
     <Compile Include="DataFiles\SearchDataClass.cs" />
@@ -139,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Carrier\CarrierViewFlightBookingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\CustomerBookingDetailsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

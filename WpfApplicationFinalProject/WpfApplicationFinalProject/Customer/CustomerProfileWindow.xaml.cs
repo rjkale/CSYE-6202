@@ -36,7 +36,6 @@ namespace WpfApplicationFinalProject.Customer
             txtCIty.Text = person.city;
             txtBoxGender.Text = person.gender;
             txtBoxAge.Text = person.age;
-
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

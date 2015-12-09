@@ -22,7 +22,9 @@ namespace WpfApplicationFinalProject.Class
         public string EconomySeats { set; get; }
         public string EconomyPlusSeats { set; get; }
         public string BusinessSeats { set; get; }
-        
+        public string departureTime { set; get; }
+        public string arrivalTime { set; get; }
+
 
         public String getBusinessPrice(String economy)
         {

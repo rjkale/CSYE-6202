@@ -16,10 +16,10 @@ namespace WpfApplicationFinalProject
     public partial class CustomerHomePageWindow : Window
     {
         Person person;
-        public CustomerHomePageWindow(Person cust)
+        public CustomerHomePageWindow(Person person)
         {
             InitializeComponent();
-            this.person = cust;
+            this.person = person;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             populateCombobox();
             DatePicker.SelectedDate = new DateTime(2015, 12, 11);
@@ -89,7 +89,7 @@ namespace WpfApplicationFinalProject
                 search.classType = coboxClass.SelectedValue.ToString();
                 search.date = DatePicker.SelectedDate.Value.ToShortDateString();
                 search.seats = coboxSeats.SelectedValue.ToString();
-
+                search.username = person.username;
 
                 CustomerSearchPageWindow c = new CustomerSearchPageWindow(search);
                 c.Show();

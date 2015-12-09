@@ -28,6 +28,7 @@ namespace WpfApplicationFinalProject.Customer
             this.flight = flight;
             this.search = search;
             populateValues();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void populateValues()
@@ -93,8 +94,26 @@ namespace WpfApplicationFinalProject.Customer
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            CustomerCheckOutWindow check = new CustomerCheckOutWindow();
-            check.Show();
+            Booking booking = new Booking();
+            booking.flightName = flight.flightName;
+            booking.flightnumber = flight.flightnumber;
+            booking.sourceCity = flight.sourceCity;
+            booking.destinationCity = flight.destinationCity;
+            booking.date = flight.date;
+            booking.duration = flight.duration;
+            booking.seats = search.seats;
+            booking.classType = search.classType;
+            booking.fair = Convert.ToString(checkClassTypePrice() * Convert.ToInt16(search.seats));
+            booking.tax = calculateTax();
+            booking.totalAmount = totalFair();
+            //booking.customerUserName;
+            //booking.flightCarrierUserName;
+
+
+            this.Close();
+            CustomerBookingDetailsWindow cus = new CustomerBookingDetailsWindow(flight, search, booking);
+            cus.Show();
+
         }
     }
 }

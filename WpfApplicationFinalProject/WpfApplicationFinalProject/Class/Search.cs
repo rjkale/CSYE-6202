@@ -13,5 +13,6 @@ namespace WpfApplicationFinalProject.Class
         public string classType { set; get; }
         public string date { set; get; }
         public string seats { set; get; }
+        public string username { set; get; }
     }
 }
