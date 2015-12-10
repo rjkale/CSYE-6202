@@ -37,8 +37,16 @@ namespace WpfApplicationFinalProject.Customer
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
+            string userName = search.username;
+            CustomerDataClass cd = new CustomerDataClass();
+            Person person = cd.getUserInfo(userName);
+
+            booking.customerName = person.name;
+            booking.customerUserName = person.username;
+
+
             this.Close();
-            CustomerCheckOutWindow check = new CustomerCheckOutWindow(flight, search);
+            CustomerCheckOutWindow check = new CustomerCheckOutWindow(flight, search, booking);
             check.Show();
         }
 

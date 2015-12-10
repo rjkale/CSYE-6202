@@ -10,19 +10,19 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="txtBoxCardNumber" HorizontalAlignment="Left" Height="37" Margin="129,115,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="146" MaxLength="16"/>
-        <TextBox x:Name="txtBoxCardName" HorizontalAlignment="Left" Height="35" Margin="128,231,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="145" MaxLength="15"/>
-        <TextBox x:Name="txtBoxCardCode" HorizontalAlignment="Left" Height="38" Margin="293,229,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="128" MaxLength="3"/>
+        <TextBox x:Name="txtBoxCardNumber" HorizontalAlignment="Left" Height="37" Margin="129,115,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="146" MaxLength="16" KeyDown="txtBoxCardNumber_KeyDown" TabIndex="1"/>
+        <TextBox x:Name="txtBoxCardName" HorizontalAlignment="Left" Height="35" Margin="128,231,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="145" MaxLength="15" TabIndex="4"/>
+        <TextBox x:Name="txtBoxCardCode" HorizontalAlignment="Left" Height="38" Margin="305,229,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="51" MaxLength="3" KeyDown="txtBoxCardCode_KeyDown" TabIndex="5"/>
         <Label x:Name="label" Content="Card Number" HorizontalAlignment="Left" Margin="130,87,0,0" VerticalAlignment="Top" Width="144"/>
         <Label x:Name="label_Copy" Content="Expires" HorizontalAlignment="Left" Margin="298,86,0,0" VerticalAlignment="Top" Width="123"/>
         <Label x:Name="label_Copy1" Content="Name" HorizontalAlignment="Left" Margin="129,199,0,0" VerticalAlignment="Top" Width="144"/>
         <Label x:Name="label_Copy2" Content="Card code" HorizontalAlignment="Left" Margin="297,198,0,0" VerticalAlignment="Top" Width="123"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="308,117,0,0" VerticalAlignment="Top" Width="40" Height="35"/>
-        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="363,117,0,0" VerticalAlignment="Top" Width="40" Height="35"/>
+        <ComboBox x:Name="comboBoxMonth" HorizontalAlignment="Left" Margin="308,117,0,0" VerticalAlignment="Top" Width="40" Height="35" TabIndex="2"/>
+        <ComboBox x:Name="comboBoxYear" HorizontalAlignment="Left" Margin="363,117,0,0" VerticalAlignment="Top" Width="71" Height="35" TabIndex="3"/>
         <Label x:Name="label1" Content="MM" HorizontalAlignment="Left" Margin="311,157,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy" Content="YY" HorizontalAlignment="Left" Margin="368,158,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Purchace" HorizontalAlignment="Left" Margin="387,304,0,0" VerticalAlignment="Top" Width="119" Height="36"/>
-        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="40,308,0,0" VerticalAlignment="Top" Width="87" Height="39" Click="button1_Click_1"/>
+        <Label x:Name="label1_Copy" Content="YY" HorizontalAlignment="Left" Margin="389,158,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Purchace" HorizontalAlignment="Left" Margin="387,304,0,0" VerticalAlignment="Top" Width="119" Height="36" Click="button_Click" TabIndex="6"/>
+        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="40,308,0,0" VerticalAlignment="Top" Width="87" Height="39" Click="button1_Click_1" TabIndex="7"/>
 
     </Grid>
 </Window>
