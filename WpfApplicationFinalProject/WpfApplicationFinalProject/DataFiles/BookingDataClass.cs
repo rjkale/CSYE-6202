@@ -11,6 +11,7 @@ namespace WpfApplicationFinalProject.DataFiles
     class BookingDataClass
     {
         Booking booking;
+        Flight flight;
         DBconnection objcon = new DBconnection();
 
         public Boolean addtoBookings(Booking booking)
@@ -68,6 +69,106 @@ namespace WpfApplicationFinalProject.DataFiles
         }
 
 
+        public Boolean updateFlightsTable(Flight flight, string seat, string classTypeSeats)
+        {
+            string flightCarrierUserName = flight.userName;
+            string flightName = flight.flightName;
+            string flightnumber = flight.flightnumber;
+            int seats = Convert.ToInt32(seat);
+            string classtypeSeats = classTypeSeats;
+            
+
+            //try
+            //{
+            objcon.Connections();
+            string query = "update FlightDetailsTable set "+ classtypeSeats + " = @seats where userName = @flightCarrierUserName and flightNumber = @flightnumber and flightName = @flightName ";
+            SqlCommand cmd = new SqlCommand(query, objcon.con);
+
+            cmd.Parameters.Add(new SqlParameter("@flightCarrierUserName", flightCarrierUserName));
+            cmd.Parameters.Add(new SqlParameter("@flightName", flightName));
+            cmd.Parameters.Add(new SqlParameter("@flightnumber", flightnumber));
+            cmd.Parameters.Add(new SqlParameter("@seats", seats));
+            cmd.Parameters.Add(new SqlParameter("@classtypeSeats", classtypeSeats));
+            
+            cmd.ExecuteNonQuery();
+            return true;
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
+        }
+
+
+
+        public List<Booking> loadBookedFlightsDataGridView(Person person)
+        {
+
+            
+            String userName = person.username;
+
+            List<Booking> book = new List<Booking>();
+
+            // try
+            //  {
+
+            objcon.Connections();
+            string query = "Select * from Bookings where  customerUserName = '" + userName + "' ";
+            using (SqlCommand cmd = new SqlCommand(query, objcon.con))
+            using (SqlDataReader reader = cmd.ExecuteReader())
+
+                while (reader.Read())
+                {
+                    Booking b = new Booking();
+                    b.customerUserName = reader.GetString(0).Trim();
+                    b.customerName = reader.GetString(1).Trim();
+                    b.customerPhone = reader.GetString(2).Trim();
+                    b.flightCarrierUserName = reader.GetString(3).Trim();
+                    b.flightName = reader.GetString(4).Trim();
+                    b.flightnumber = reader.GetString(5).Trim();
+                    b.sourceCity = reader.GetString(6).Trim();
+                    b.destinationCity = reader.GetString(7).Trim();
+                    b.date = reader.GetString(8).Trim();
+                    b.duration = reader.GetString(9).Trim();
+                    b.seats = reader.GetString(10).Trim();
+                    b.classType = reader.GetString(11).Trim();
+                    b.fair = reader.GetString(12).Trim();
+                    b.tax = reader.GetString(13).Trim();
+                    book.Add(b);
+                }
+            return book;
+        }
+
+        /*
+
+        public Boolean unBookFlightTable(Booking booking)
+        {
+            string userName = booking.customerUserName;
+
+            
+            //try
+            //{
+            objcon.Connections();
+            string query = "update FlightDetailsTable set " + classtypeSeats + " = @seats where userName = @flightCarrierUserName and flightNumber = @flightnumber and flightName = @flightName ";
+            SqlCommand cmd = new SqlCommand(query, objcon.con);
+
+            cmd.Parameters.Add(new SqlParameter("@flightCarrierUserName", flightCarrierUserName));
+            cmd.Parameters.Add(new SqlParameter("@flightName", flightName));
+            cmd.Parameters.Add(new SqlParameter("@flightnumber", flightnumber));
+            cmd.Parameters.Add(new SqlParameter("@seats", seats));
+            cmd.Parameters.Add(new SqlParameter("@classtypeSeats", classtypeSeats));
+
+            cmd.ExecuteNonQuery();
+            return true;
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
+
+
+    }
+        */
 
     }
 }

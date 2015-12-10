@@ -26,9 +26,9 @@ namespace WpfApplicationFinalProject.DataFiles
                 string EconomyPrice = flight.EconomyPrice;
                 string economyPlusPrice = flight.economyPlusPrice;
                 string BusinessPrice = flight.businessPrice;
-                string EconomySeats = flight.EconomySeats;
-                string EconomyPlusSeats = flight.EconomyPlusSeats;
-                string BusinessSeats = flight.BusinessSeats;
+                int EconomySeats = flight.EconomySeats;
+                int EconomyPlusSeats = flight.EconomyPlusSeats;
+                int BusinessSeats = flight.BusinessSeats;
                 
 
                 objcon.Connections();
@@ -83,9 +83,9 @@ namespace WpfApplicationFinalProject.DataFiles
                         f.EconomyPrice = reader.GetString(7).Trim();
                         f.economyPlusPrice = reader.GetString(8).Trim();
                         f.businessPrice = reader.GetString(9).Trim();
-                        f.EconomySeats = reader.GetString(10).Trim();
-                        f.EconomyPlusSeats = reader.GetString(11).Trim();
-                        f.BusinessSeats = reader.GetString(12).Trim();
+                        f.EconomySeats = reader.GetInt32(10);
+                        f.EconomyPlusSeats = reader.GetInt32(11);
+                        f.BusinessSeats = reader.GetInt32(12);
                         flist.Add(f);                   
                     }
                         return flist;
@@ -138,9 +138,9 @@ namespace WpfApplicationFinalProject.DataFiles
             string EconomyPrice = flight.EconomyPrice;
             string economyPlusPrice = flight.geteconomyPlusPrice(EconomyPrice);
             string BusinessPrice = flight.getBusinessPrice(EconomyPrice);
-            string EconomySeats = flight.EconomySeats;
-            string EconomyPlusSeats = flight.EconomyPlusSeats;
-            string BusinessSeats = flight.BusinessSeats;
+            int EconomySeats = flight.EconomySeats;
+            int EconomyPlusSeats = flight.EconomyPlusSeats;
+            int BusinessSeats = flight.BusinessSeats;
 
 
             objcon.Connections();

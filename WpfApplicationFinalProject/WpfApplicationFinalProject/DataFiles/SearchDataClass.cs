@@ -17,18 +17,19 @@ namespace WpfApplicationFinalProject.DataFiles
             string destination = search.destinationCity;
             string date = search.date;
             string seats = search.seats;
-            string classtype = "";
+            string classSeats = "";
+            string classType = search.classType;
             if (search.classType == "Economy")
             {
-                 classtype = "EconomySeats";
+                 classSeats = "EconomySeats";
             }
             else if (search.classType == "Economy Plus")
             {
-                 classtype = "EconomyPlusSeats";
+                 classSeats = "EconomyPlusSeats";
             }
             else if (search.classType == "Business")
             {
-                 classtype = "BusinessSeats";
+                 classSeats = "BusinessSeats";
             }
 
             
@@ -37,7 +38,7 @@ namespace WpfApplicationFinalProject.DataFiles
             try
             {
                 objcon.Connections();
-            string query = "  Select * from FlightDetailsTable where  sourceCity = '"+source+"'   and destinationCity = '"+destination+"' and travelDate ='"+date+"'  and  "+ classtype +" = '"+seats+"' ";
+            string query = "  Select * from FlightDetailsTable where  sourceCity = '"+source+"'   and destinationCity = '"+destination+"' and travelDate ='"+date+"'  and  "+ classSeats +" > '"+seats+"'  ";
             using (SqlCommand cmd = new SqlCommand(query, objcon.con))
             using (SqlDataReader reader = cmd.ExecuteReader())
 
@@ -54,9 +55,9 @@ namespace WpfApplicationFinalProject.DataFiles
                     f.EconomyPrice = reader.GetString(7).Trim();
                     f.economyPlusPrice = reader.GetString(8).Trim();
                     f.businessPrice = reader.GetString(9).Trim();
-                    f.EconomySeats = reader.GetString(10).Trim();
-                    f.EconomyPlusSeats = reader.GetString(11).Trim();
-                    f.BusinessSeats = reader.GetString(12).Trim();
+                    f.EconomySeats = reader.GetInt32(10);
+                    f.EconomyPlusSeats = reader.GetInt32(11);
+                    f.BusinessSeats = reader.GetInt32(12);
                     f.userName = reader.GetString(0).Trim();
                     flist.Add(f);
                 }

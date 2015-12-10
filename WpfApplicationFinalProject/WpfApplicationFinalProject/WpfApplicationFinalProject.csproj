@@ -101,6 +101,12 @@
     <Compile Include="Customer\CustomerSearchPageWindow.xaml.cs">
       <DependentUpon>CustomerSearchPageWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerSummaryPageWindow.xaml.cs">
+      <DependentUpon>CustomerSummaryPageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewMyBookingsWindow.xaml.cs">
+      <DependentUpon>ViewMyBookingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataFiles\AdminDataClass.cs" />
     <Compile Include="DataFiles\BookingDataClass.cs" />
     <Compile Include="DataFiles\CarrierDataClass.cs" />
@@ -171,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Customer\CustomerSearchPageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\CustomerSummaryPageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\ViewMyBookingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

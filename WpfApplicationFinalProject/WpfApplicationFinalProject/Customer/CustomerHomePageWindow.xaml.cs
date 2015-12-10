@@ -113,5 +113,11 @@ namespace WpfApplicationFinalProject
             MainWindow m = new MainWindow();
             m.Show();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewMyBookingsWindow vm = new ViewMyBookingsWindow(person);
+            vm.Show();
+        }
     }
 }

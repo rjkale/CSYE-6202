@@ -40,9 +40,9 @@ namespace WpfApplicationFinalProject.Carrier
             txtBoxFDestinationCity.Text = flight.destinationCity;
             txtBoxTravelDate.Text = flight.date;
             txtBoxFlightDuration.Text = flight.duration;
-            txtBoxEconomyPlusSeats.Text = flight.EconomyPlusSeats;
-            txtBoxFEconomySeats.Text = flight.EconomySeats;
-            txtBoxBusinessSeats.Text = flight.BusinessSeats;
+            txtBoxEconomyPlusSeats.Text = Convert.ToString(flight.EconomyPlusSeats);
+            txtBoxFEconomySeats.Text = Convert.ToString(flight.EconomySeats);
+            txtBoxBusinessSeats.Text = Convert.ToString(flight.BusinessSeats);
 
         }
 

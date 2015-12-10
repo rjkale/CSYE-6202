@@ -75,6 +75,10 @@ namespace WpfApplicationFinalProject.Customer
                             if (bd.addtoBookings(getBookingDetails()) == true)
                             {
                                 MessageBox.Show("Booking Done Successfully");
+                                this.Close();
+                                Booking book = getBookingDetails();
+                                CustomerSummaryPageWindow cs = new CustomerSummaryPageWindow(flight,  search,  book);
+                                cs.Show();
                             }
                             else
                             {

@@ -170,9 +170,9 @@ namespace WpfApplicationFinalProject.Carrier
             flight.EconomyPrice = EconomyPrice;
             flight.economyPlusPrice = economyPlusPrice;
             flight.businessPrice = BusinessPrice;
-            flight.EconomySeats = EconomySeats;
-            flight.EconomyPlusSeats = EconomyPlusSeats;
-            flight.BusinessSeats = BusinessSeats;
+            flight.EconomySeats = Convert.ToInt32(EconomySeats);
+            flight.EconomyPlusSeats = Convert.ToInt32(EconomyPlusSeats);
+            flight.BusinessSeats = Convert.ToInt32(BusinessSeats);
 
             
 

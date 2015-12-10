@@ -30,5 +30,6 @@
         <Image x:Name="image1" HorizontalAlignment="Left" Height="39" Margin="6,5,0,0" VerticalAlignment="Top" Width="1052" Source="/WpfApplicationFinalProject;component/Images/TitleBar.PNG"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="949,11,0,0" VerticalAlignment="Top" Width="81" Height="28" Click="btnLogout_Click"/>
         <Button x:Name="btn_Myprofile" Content="My Profile" HorizontalAlignment="Left" Margin="849,12,0,0" VerticalAlignment="Top" Width="88" Height="28" Click="btn_Myprofile_Click" />
+        <Button x:Name="button" Content="Bookings" HorizontalAlignment="Left" Margin="750,12,0,0" VerticalAlignment="Top" Width="79" Height="28" Click="button_Click"/>
     </Grid>
 </Window>
