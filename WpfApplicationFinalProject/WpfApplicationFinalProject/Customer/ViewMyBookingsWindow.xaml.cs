@@ -40,20 +40,29 @@ namespace WpfApplicationFinalProject.Customer
         {
             if (dataGrid.SelectedItems.Count > 0)
             {
-                Booking booking = (Booking)dataGrid.SelectedValue;
-                BookingDataClass bd = new BookingDataClass();
-                if (bd.unBookFlightTable(booking, getClassTypeSeats()) == true)
+                try
                 {
-                    MessageBox.Show("Flight Unbooked");
-                    if (bd.updateBookingsTable(booking, getClassTypeSeats()) == true)
+                    Booking booking = (Booking)dataGrid.SelectedValue;
+                    BookingDataClass bd = new BookingDataClass();
+                    if (bd.unBookFlightTable(booking, getClassTypeSeats()) == true)
                     {
-                        MessageBox.Show("Booking tale updated");
-                        this.Close();
-                        ViewMyBookingsWindow vm = new ViewMyBookingsWindow(person);
-                        vm.Show();
+                        MessageBox.Show("Flight Unbooked");
+                        if (bd.updateBookingsTable(booking, getClassTypeSeats()) == true)
+                        {
+                            MessageBox.Show("Booking tale updated");
+                            this.Close();
+                            ViewMyBookingsWindow vm = new ViewMyBookingsWindow(person);
+                            vm.Show();
 
+                        }
                     }
                 }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("No values in the grid");
+                }
+                
             }
             else
             {

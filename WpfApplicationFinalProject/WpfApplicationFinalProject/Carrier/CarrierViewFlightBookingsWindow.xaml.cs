@@ -43,6 +43,9 @@ namespace WpfApplicationFinalProject.Carrier
             txtBoxEconomyPlusSeats.Text = Convert.ToString(flight.EconomyPlusSeats);
             txtBoxFEconomySeats.Text = Convert.ToString(flight.EconomySeats);
             txtBoxBusinessSeats.Text = Convert.ToString(flight.BusinessSeats);
+            txtBoxEconomyFare.Text = flight.EconomyPrice;
+            txtBoxEconomyPlusFair.Text = flight.economyPlusPrice;
+            txtBoxBusinessFiar.Text = flight.businessPrice;
 
         }
 
@@ -51,6 +54,12 @@ namespace WpfApplicationFinalProject.Carrier
             this.Close();
             CarrierHomePageWindow home = new CarrierHomePageWindow(fc);
             home.Show();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            CarrierPassengerListWindow pass = new CarrierPassengerListWindow(flight,fc);
+            pass.Show();
         }
     }
 }
