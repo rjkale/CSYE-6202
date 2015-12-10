@@ -27,6 +27,7 @@ namespace WpfApplicationFinalProject.Customer
             InitializeComponent();
             this.person = person;
             loadDataGrid();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void loadDataGrid()
@@ -40,12 +41,43 @@ namespace WpfApplicationFinalProject.Customer
             if (dataGrid.SelectedItems.Count > 0)
             {
                 Booking booking = (Booking)dataGrid.SelectedValue;
+                BookingDataClass bd = new BookingDataClass();
+                if (bd.unBookFlightTable(booking, getClassTypeSeats()) == true)
+                {
+                    MessageBox.Show("Flight Unbooked");
+                    if (bd.updateBookingsTable(booking, getClassTypeSeats()) == true)
+                    {
+                        MessageBox.Show("Booking tale updated");
+                        this.Close();
+                        ViewMyBookingsWindow vm = new ViewMyBookingsWindow(person);
+                        vm.Show();
+
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Please select a Booking");
             }
         }
+
+        private string getClassTypeSeats()
+        {
+            Booking booking = (Booking)dataGrid.SelectedValue;
+            string classtype = booking.classType;
+
+            if (classtype == "Economy")
+            {
+                return "EconomySeats";
+            }
+            else if (classtype == "Economy Plus")
+            {
+                return "EconomyPlusSeats";
+            }
+            else
+                return "BusinessSeats";
+        }
+
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

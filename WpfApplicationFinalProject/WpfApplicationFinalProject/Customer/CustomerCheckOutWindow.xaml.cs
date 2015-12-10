@@ -179,6 +179,8 @@ namespace WpfApplicationFinalProject.Customer
             b.fair = booking.fair;
             b.tax = booking.tax;
             b.totalAmount = booking.totalAmount;
+            DateTime now = DateTime.Now;
+            b.timStamp = now.ToString();
             
             return b;
         }

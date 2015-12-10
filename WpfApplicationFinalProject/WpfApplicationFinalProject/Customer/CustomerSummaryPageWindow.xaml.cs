@@ -90,8 +90,6 @@ namespace WpfApplicationFinalProject.Customer
             }
             else
                 return "BusinessSeats";
-            
-
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

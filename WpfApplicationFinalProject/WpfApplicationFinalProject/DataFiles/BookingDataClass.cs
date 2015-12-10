@@ -34,11 +34,12 @@ namespace WpfApplicationFinalProject.DataFiles
             string totalAmount = booking.totalAmount;
             string departureTime = "Departure Time";
             string arrivalTime = "Arrival Time";
+            string timeStamp = booking.timStamp;
 
             //try
             //{
             objcon.Connections();
-            string query = "Insert into Bookings values(@customerName,@customerUserName,@customerPhone,@flightCarrierUserName,@flightName,@flightnumber,@sourceCity, @destinationCity,@date,@duration,@seats,@classType,@fair, @tax, @totalAmount,@departureTime, @arrivalTime )";
+            string query = "Insert into Bookings values(@customerName,@customerUserName,@customerPhone,@flightCarrierUserName,@flightName,@flightnumber,@sourceCity, @destinationCity,@date,@duration,@seats,@classType,@fair, @tax, @totalAmount,@departureTime, @arrivalTime,@timeStamp )";
             SqlCommand cmd = new SqlCommand(query, objcon.con);
 
             cmd.Parameters.Add(new SqlParameter("@customerName", customerName));
@@ -58,6 +59,7 @@ namespace WpfApplicationFinalProject.DataFiles
             cmd.Parameters.Add(new SqlParameter("@totalAmount", totalAmount));
             cmd.Parameters.Add(new SqlParameter("@departureTime", departureTime));
             cmd.Parameters.Add(new SqlParameter("@arrivalTime", arrivalTime));
+            cmd.Parameters.Add(new SqlParameter("@timeStamp", timeStamp));
             cmd.ExecuteNonQuery();
             return true;
             //}
@@ -134,22 +136,28 @@ namespace WpfApplicationFinalProject.DataFiles
                     b.classType = reader.GetString(11).Trim();
                     b.fair = reader.GetString(12).Trim();
                     b.tax = reader.GetString(13).Trim();
+                    b.totalAmount = reader.GetString(14).Trim();
+                    b.timStamp = reader.GetString(17).Trim();
                     book.Add(b);
                 }
             return book;
         }
 
-        /*
+        
 
-        public Boolean unBookFlightTable(Booking booking)
+        public Boolean unBookFlightTable(Booking booking, string classTypeSeats)
         {
             string userName = booking.customerUserName;
 
-            
-            //try
-            //{
+            string flightCarrierUserName = booking.flightCarrierUserName;
+            string flightName = booking.flightName;
+            string flightnumber = booking.flightnumber;
+            int seats = Convert.ToInt32(booking.seats);
+            string classtypeSeats = classTypeSeats;
+            string timestamp = booking.timStamp;
+
             objcon.Connections();
-            string query = "update FlightDetailsTable set " + classtypeSeats + " = @seats where userName = @flightCarrierUserName and flightNumber = @flightnumber and flightName = @flightName ";
+            string query = "update FlightDetailsTable set " + classtypeSeats + " = " + classtypeSeats + " + @seats where flightnumber = @flightnumber";
             SqlCommand cmd = new SqlCommand(query, objcon.con);
 
             cmd.Parameters.Add(new SqlParameter("@flightCarrierUserName", flightCarrierUserName));
@@ -157,6 +165,7 @@ namespace WpfApplicationFinalProject.DataFiles
             cmd.Parameters.Add(new SqlParameter("@flightnumber", flightnumber));
             cmd.Parameters.Add(new SqlParameter("@seats", seats));
             cmd.Parameters.Add(new SqlParameter("@classtypeSeats", classtypeSeats));
+            cmd.Parameters.Add(new SqlParameter("@timestamp", timestamp));
 
             cmd.ExecuteNonQuery();
             return true;
@@ -167,8 +176,41 @@ namespace WpfApplicationFinalProject.DataFiles
             //}
 
 
-    }
-        */
+            }
+
+
+        public Boolean updateBookingsTable(Booking booking, string classTypeSeats)
+        {
+            string userName = booking.customerUserName;
+
+            string flightCarrierUserName = booking.flightCarrierUserName;
+            string flightName = booking.flightName;
+            string flightnumber = booking.flightnumber;
+            int seats = Convert.ToInt32(booking.seats);
+            string classtypeSeats = classTypeSeats;
+            string timestamp = booking.timStamp;
+
+            objcon.Connections();
+            string query = "Delete from Bookings where flightnumber = @flightnumber and timestamp = @timestamp";
+            SqlCommand cmd = new SqlCommand(query, objcon.con);
+
+            cmd.Parameters.Add(new SqlParameter("@flightCarrierUserName", flightCarrierUserName));
+            cmd.Parameters.Add(new SqlParameter("@flightName", flightName));
+            cmd.Parameters.Add(new SqlParameter("@flightnumber", flightnumber));
+            cmd.Parameters.Add(new SqlParameter("@seats", seats));
+            cmd.Parameters.Add(new SqlParameter("@classtypeSeats", classtypeSeats));
+            cmd.Parameters.Add(new SqlParameter("@timestamp", timestamp));
+
+            cmd.ExecuteNonQuery();
+            return true;
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
+
+
+        }
 
     }
 }
