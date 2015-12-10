@@ -95,6 +95,7 @@ namespace WpfApplicationFinalProject.Customer
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Booking booking = new Booking();
+            booking.flightCarrierUserName = flight.userName;
             booking.flightName = flight.flightName;
             booking.flightnumber = flight.flightnumber;
             booking.sourceCity = flight.sourceCity;

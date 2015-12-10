@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApplicationFinalProject.Class;
+using WpfApplicationFinalProject.DataFiles;
 
 namespace WpfApplicationFinalProject.Customer
 {
@@ -31,6 +32,7 @@ namespace WpfApplicationFinalProject.Customer
             this.booking = booking;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             populateValues();
+            txtBoxCardNumber.Text = "1234567890123456";
 
         }
 
@@ -64,6 +66,26 @@ namespace WpfApplicationFinalProject.Customer
                     MessageBoxResult result = (MessageBox.Show("Are you sure you want to purchase the ticket \nwith you Card number ", "Purchase Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question));
                     if (result == MessageBoxResult.Yes)
                     {
+                        PaymentDataClass pay = new PaymentDataClass();
+                        if (pay.addToPayment(getPaymentDetails()) == true)
+                        {
+                            MessageBox.Show("Payment details added successfully");
+
+                            BookingDataClass bd = new BookingDataClass();
+                            if (bd.addtoBookings(getBookingDetails()) == true)
+                            {
+                                MessageBox.Show("Booking Done Successfully");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Booking not done Please try again");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("unable to add payements");
+                        }
                     }
                 }
                 else
@@ -108,13 +130,53 @@ namespace WpfApplicationFinalProject.Customer
 
         private Boolean checkForLength()
         {
-            if ((Convert.ToInt32(txtBoxCardNumber.Text)) < 10 )
+            int a;
+            if (int.TryParse(txtBoxCardNumber.Text, out a))
+            {
+                if (a < 16)
                 { return false; }
-            else if ((Convert.ToInt32(txtBoxCardCode.Text)) < 3)
-                { return false; }
-
-            return false;
+            }          
             
+            else if (int.TryParse(txtBoxCardCode.Text, out a))
+            {
+                if (a < 3)
+                { return false; }
+            }
+            return true;
+        }
+
+        private PaymentDetails getPaymentDetails()
+        {
+            PaymentDetails pay = new PaymentDetails();
+            pay.cardNumber = txtBoxCardNumber.Text;
+            pay.expiryMonth = comboBoxMonth.SelectedValue.ToString();
+            pay.expiryYear = comboBoxYear.SelectedValue.ToString();
+            pay.CustomerUserName = txtBoxCardName.Text;
+            pay.cardCVV = txtBoxCardCode.Text;
+            pay.cardName = txtBoxCardName.Text;
+            return pay;
+        }
+
+        private Booking getBookingDetails()
+        {
+            Booking b = new Booking();
+            b.customerUserName = booking.customerUserName;
+            b.customerName = booking.customerName;
+            b.customerPhone = booking.customerPhone;
+            b.flightCarrierUserName = booking.flightCarrierUserName;
+            b.flightName = booking.flightName;
+            b.flightnumber = booking.flightnumber;
+            b.sourceCity = booking.sourceCity;
+            b.destinationCity = booking.destinationCity;
+            b.date = booking.date;
+            b.duration = booking.duration;
+            b.seats = booking.seats;
+            b.classType = booking.classType;
+            b.fair = booking.fair;
+            b.tax = booking.tax;
+            b.totalAmount = booking.totalAmount;
+            
+            return b;
         }
     }
 }

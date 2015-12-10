@@ -8,11 +8,11 @@ namespace WpfApplicationFinalProject.Class
 {
     class PaymentDetails
     {
-        string CustomerUserName { set; get; }
-        int cardNumber { set; get; }
-        int expiryMonth { set; get; }
-        int expiryYear { set; get; }
-        string name { set; get; }
-        int cardCVV { set; get; }
+        public string CustomerUserName { set; get; }
+        public string cardNumber { set; get; }
+        public string expiryMonth { set; get; }
+        public string expiryYear { set; get; }
+        public string cardName { set; get; }
+        public string cardCVV { set; get; }
     }
 }

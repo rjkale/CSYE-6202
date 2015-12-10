@@ -43,6 +43,7 @@ namespace WpfApplicationFinalProject.Customer
 
             booking.customerName = person.name;
             booking.customerUserName = person.username;
+            booking.customerPhone = person.phone;
 
 
             this.Close();

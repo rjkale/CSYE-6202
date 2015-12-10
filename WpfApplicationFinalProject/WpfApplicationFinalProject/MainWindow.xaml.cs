@@ -24,6 +24,7 @@ namespace WpfApplicationFinalProject
     {
         public MainWindow()
         {
+
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             populateCombobox();

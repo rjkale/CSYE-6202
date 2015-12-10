@@ -102,10 +102,12 @@
       <DependentUpon>CustomerSearchPageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataFiles\AdminDataClass.cs" />
+    <Compile Include="DataFiles\BookingDataClass.cs" />
     <Compile Include="DataFiles\CarrierDataClass.cs" />
     <Compile Include="DataFiles\CustomerDataClass.cs" />
     <Compile Include="DataFiles\DBconnection.cs" />
     <Compile Include="DataFiles\LoginDataClass.cs" />
+    <Compile Include="DataFiles\PaymentDataClass.cs" />
     <Compile Include="DataFiles\SearchDataClass.cs" />
     <Compile Include="DataFiles\SignUpDataClass.cs" />
     <Compile Include="HomePage and Signup\SearchResultsWindow.xaml.cs">
@@ -239,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\flight.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\splash.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

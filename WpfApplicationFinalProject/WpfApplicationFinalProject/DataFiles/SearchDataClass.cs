@@ -44,7 +44,7 @@ namespace WpfApplicationFinalProject.DataFiles
                 while (reader.Read())
                 {
                     Flight f = new Flight();
-                   // f.userName = reader.GetString(0).Trim();
+                    
                     f.flightName = reader.GetString(1).Trim();
                     f.flightnumber = reader.GetString(2).Trim();
                     f.sourceCity = reader.GetString(3).Trim();
@@ -57,6 +57,7 @@ namespace WpfApplicationFinalProject.DataFiles
                     f.EconomySeats = reader.GetString(10).Trim();
                     f.EconomyPlusSeats = reader.GetString(11).Trim();
                     f.BusinessSeats = reader.GetString(12).Trim();
+                    f.userName = reader.GetString(0).Trim();
                     flist.Add(f);
                 }
             return flist;
