@@ -96,23 +96,38 @@ namespace WpfApplicationFinalProject.Customer
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Booking booking = (Booking)dataGrid.SelectedValue;
-            //string date = booking.timStamp;
-            //string newDate = RemoveSpecialCharacters(date);
-            string filename = booking.customerName + booking.flightnumber + ".pdf";
-
-            string filePath = @"G:\C sharp\Final Project\pdfs\" + filename;
-            if (File.Exists(filePath))
+            if (dataGrid.SelectedItems.Count > 0)
             {
-                string argument = @"" + filePath;
-                System.Diagnostics.Process.Start("explorer.exe", argument);
+                try
+                {
+                    Booking booking = (Booking)dataGrid.SelectedValue;
+                    //string date = booking.timStamp;
+                    //string newDate = RemoveSpecialCharacters(date);
+                    string filename = booking.customerName + booking.flightnumber + ".pdf";
 
+                    string filePath = @"G:\C sharp\Final Project\pdfs\" + filename;
+                    if (File.Exists(filePath))
+                    {
+                        string argument = @"" + filePath;
+                        System.Diagnostics.Process.Start("explorer.exe", argument);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("File Not Present");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("No values in the grid");
+                }
             }
             else
             {
-                MessageBox.Show("File Not Present");
+                MessageBox.Show("Please select a Booking");
             }
-            
+
         }
 
         /*

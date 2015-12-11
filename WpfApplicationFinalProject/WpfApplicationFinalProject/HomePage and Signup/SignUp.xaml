@@ -8,6 +8,12 @@
         Title="SignUp" Height="634.166" Width="540.334"
         WindowStyle="None">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD4D4D4" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label x:Name="label" Content="Sign Up" HorizontalAlignment="Left" Margin="207,30,0,0" VerticalAlignment="Top" Height="47" Width="104" FontSize="24"/>
         <Label x:Name="label1" Content="User name" HorizontalAlignment="Left" Margin="92,112,0,0" VerticalAlignment="Top" Height="32" Width="83"/>
         <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Left" Height="32" Margin="229,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>

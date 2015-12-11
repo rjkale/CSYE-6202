@@ -8,6 +8,12 @@
         Title="Sign In" Height="396.809" Width="367.021"
         ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD4D4D4"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label x:Name="label" Content="Login" HorizontalAlignment="Left" Margin="131,49,0,0" VerticalAlignment="Top" Height="56" Width="96" FontSize="25"/>
         <Label x:Name="label1" Content="User name" HorizontalAlignment="Left" Margin="62,137,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Left" Height="26" Margin="172,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" TabIndex="1"/>

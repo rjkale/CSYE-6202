@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:WpfApplicationFinalProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Color x:Key="WhiteColorScreenBackground">White</Color>
+
     </Application.Resources>
 </Application>
