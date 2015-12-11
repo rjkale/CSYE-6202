@@ -63,13 +63,14 @@ namespace WpfApplicationFinalProject.Customer
             {
                 if (checkForLength() == true)
                 {
-                    MessageBoxResult result = (MessageBox.Show("Are you sure you want to purchase the ticket \nwith you Card number ", "Purchase Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question));
+                    MessageBoxResult result = (MessageBox.Show("Are you sure you want to purchase the ticket \nwith you Card number "+txtBoxCardNumber.Text+ " \non the name of "+txtBoxCardName.Text, "Purchase Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question));
                     if (result == MessageBoxResult.Yes)
                     {
                         PaymentDataClass pay = new PaymentDataClass();
                         if (pay.addToPayment(getPaymentDetails()) == true)
                         {
-                            MessageBox.Show("Payment details added successfully");
+                            //MessageBox.Show("Payment details added successfully");
+                            Console.WriteLine("Payment details added successfully");
 
                             BookingDataClass bd = new BookingDataClass();
                             if (bd.addtoBookings(getBookingDetails()) == true)

@@ -8,7 +8,7 @@
         Title="Search Results" Height="349.234" Width="621.767">
     <Grid>
         <Button x:Name="button" Content="Back" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Width="125" Height="40" Click="button_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="20,31,0,0" VerticalAlignment="Top" Height="189" Width="565"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="20,31,0,0" VerticalAlignment="Top" Height="189" Width="565" IsReadOnly="True"/>
 
     </Grid>
 </Window>

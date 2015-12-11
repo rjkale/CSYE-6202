@@ -11,6 +11,7 @@
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="54,85,0,0" VerticalAlignment="Top" Height="215" Width="765"/>
         <Button x:Name="button" Content="Close" HorizontalAlignment="Left" Margin="49,354,0,0" VerticalAlignment="Top" Width="113" Height="30" Click="button_Click"/>
         <Button x:Name="button1" Content="Un Book My Flight" HorizontalAlignment="Left" Margin="709,351,0,0" VerticalAlignment="Top" Width="109" Height="35" Click="button1_Click"/>
+        <Button x:Name="button2" Content="View My Ticket" HorizontalAlignment="Left" Margin="523,352,0,0" VerticalAlignment="Top" Width="108" Height="35" Click="button2_Click"/>
 
     </Grid>
 </Window>

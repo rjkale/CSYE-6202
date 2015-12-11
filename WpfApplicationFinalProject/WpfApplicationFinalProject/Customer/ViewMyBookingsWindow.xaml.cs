@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,5 +93,41 @@ namespace WpfApplicationFinalProject.Customer
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Booking booking = (Booking)dataGrid.SelectedValue;
+            //string date = booking.timStamp;
+            //string newDate = RemoveSpecialCharacters(date);
+            string filename = booking.customerName + booking.flightnumber + ".pdf";
+
+            string filePath = @"G:\C sharp\Final Project\pdfs\" + filename;
+            if (File.Exists(filePath))
+            {
+                string argument = @"" + filePath;
+                System.Diagnostics.Process.Start("explorer.exe", argument);
+
+            }
+            else
+            {
+                MessageBox.Show("File Not Present");
+            }
+            
+        }
+
+        /*
+        public static string RemoveSpecialCharacters(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+        */
     }
 }

@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Customer Summary Page" Height="314.662" Width="588.722">
     <Grid>
-        <Label x:Name="label" Content="                      Thank You !&#xD;&#xA;&#xD;&#xA;                  Booking Successful" HorizontalAlignment="Left" Margin="126,91,0,0" VerticalAlignment="Top" Height="115" Width="328" FontSize="20"/>
-        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="236,223,0,0" VerticalAlignment="Top" Width="99" Height="34" Click="button_Click"/>
+        <Label x:Name="label" Content="                      Thank You !&#xD;&#xA;&#xD;&#xA;                  Booking Successful" HorizontalAlignment="Left" Margin="124,20,0,0" VerticalAlignment="Top" Height="115" Width="328" FontSize="20"/>
+        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="255,225,0,0" VerticalAlignment="Top" Width="99" Height="34" Click="button_Click"/>
+        <Button x:Name="button1" Content="View Ticket" HorizontalAlignment="Left" Margin="234,133,0,0" VerticalAlignment="Top" Width="141" Height="62" FontSize="18" Click="button1_Click"/>
 
     </Grid>
 </Window>

@@ -8,9 +8,6 @@ namespace WpfApplicationFinalProject.Class
 {
     public class FlightCarrier :User
     {
-        
         public string CompanyName { set; get; }
-        
-
     }
 }
