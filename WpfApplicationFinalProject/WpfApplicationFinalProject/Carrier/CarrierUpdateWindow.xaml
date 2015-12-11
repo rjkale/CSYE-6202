@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApplicationFinalProject.Carrier.CarrierUpdateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationFinalProject.Carrier"
+        mc:Ignorable="d"
+        Title="Carrier Update Window" Height="621.429" Width="833.459"
+        WindowStyle="None">
+    <Grid>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="288,512,-114,-277" VerticalAlignment="Top" Width="118" Height="34" Click="btnBack_Click"/>
+        <Button x:Name="btnAddFlight" Content="Update" HorizontalAlignment="Left" Margin="538,512,-366,-277" VerticalAlignment="Top" Width="120" Height="34" Click="btnAddFlight_Click" />
+        <Label x:Name="label" Content="Carrier Update Page" HorizontalAlignment="Left" Margin="372,30,-252,0" VerticalAlignment="Top" Height="38" Width="172" FontSize="15"/>
+        <Label x:Name="label1" Content="Flight Name" HorizontalAlignment="Left" Margin="58,97,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxFlightName" HorizontalAlignment="Left" Height="37" Margin="235,97,-81,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10"/>
+        <Label x:Name="label1_Copy" Content="Flight Number" HorizontalAlignment="Left" Margin="450,97,-266,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtBoxFlightNumber" HorizontalAlignment="Left" Height="36" Margin="627,94,-473,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontSize="15" MaxLength="10" IsEnabled="False"/>
+        <Label x:Name="label1_Copy1" Content="Source City" HorizontalAlignment="Left" Margin="58,160,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy2" Content="Destination City" HorizontalAlignment="Left" Margin="452,162,-290,0" VerticalAlignment="Top" Width="130" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy3" Content="Travel Date" HorizontalAlignment="Left" Margin="59,223,0,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy4" Content="Economy" HorizontalAlignment="Left" Margin="252,356,-68,-122" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy5" Content="Fare" HorizontalAlignment="Left" Margin="60,287,0,-53" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <TextBox x:Name="txtFare" HorizontalAlignment="Left" Height="34" Margin="234,286,-85,-51" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontSize="15"   MaxLength="10" KeyDown="txtFare_KeyDown"/>
+        <Label x:Name="label1_Copy6" Content="Class" HorizontalAlignment="Left" Margin="59,355,0,-121" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy7" Content="Number of Seats" HorizontalAlignment="Left" Margin="57,413,0,-179" VerticalAlignment="Top" Width="125" Height="35" FontSize="15"/>
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="234,224,-83,0" VerticalAlignment="Top" Height="37" Width="141" AllowDrop="True" DisplayDateEnd="2016-05-01" DisplayDateStart="2015-12-04" />
+        <ComboBox x:Name="coBoxSourceCity" HorizontalAlignment="Left" Margin="236,161,-81,0" VerticalAlignment="Top" Width="137" Height="35"/>
+        <ComboBox x:Name="coBoxDestinationCity" HorizontalAlignment="Left" Margin="631,160,-476,0" VerticalAlignment="Top" Width="137" Height="35"/>
+        <ComboBox x:Name="coBoxDuration" HorizontalAlignment="Left" Margin="635,225,-482,0" VerticalAlignment="Top" Width="139" Height="36"/>
+        <ComboBox x:Name="coBoxSeatsEconomy" HorizontalAlignment="Left" Margin="238,416,-85,-177" VerticalAlignment="Top" Width="139" Height="30"/>
+        <ComboBox x:Name="coBoxSeatsEconomyPlus" HorizontalAlignment="Left" Margin="444,414,-291,-175" VerticalAlignment="Top" Width="139" Height="30"/>
+        <ComboBox x:Name="coBoxSeatsBusinessClass" HorizontalAlignment="Left" Margin="645,413,-492,-174" VerticalAlignment="Top" Width="139" Height="30"/>
+        <Label x:Name="label1_Copy8" Content="Flight Duration" HorizontalAlignment="Left" Margin="457,226,-273,0" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy9" Content="Economy Plus" HorizontalAlignment="Left" Margin="455,357,-271,-123" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+        <Label x:Name="label1_Copy10" Content="Business Class" HorizontalAlignment="Left" Margin="657,353,-473,-119" VerticalAlignment="Top" Width="108" Height="35" FontSize="15"/>
+
+    </Grid>
+</Window>
