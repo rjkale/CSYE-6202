@@ -252,12 +252,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Balsamic\Final Project Balsamic.bmpr" />
+    <None Include="Balsamic\Final Project Balsamic.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="UML Diagrams\UML Diagrams.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
